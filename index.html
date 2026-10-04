@@ -1,24 +1,101 @@
-SCUOLA TECNICA
-│
-├── Meccanica
-│   ├── Statica
-│   ├── Cinematica
-│   ├── Dinamica
-│   └── ...
-│
-├── Macchine
-│   ├── Idrostatica
-│   ├── Idrodinamica
-│   ├── Pompe
-│   └── ...
-│
-├── Elettrotecnica
-│   ├── Legge di Ohm
-│   ├── Kirchhoff
-│   └── ...
-│
-├── Elettronica
-├── Informatica
-├── Matematica
-├── Chimica
-└── Fisica
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scuola Tecnica - Portale didattico</title>
+<style>
+:root{--bg:#f2f4f6;--paper:#fff;--ink:#20262d;--muted:#68737d;--line:#d9dee3;--nav:#17252d;--accent:#167a8b;--soft:#e8f5f7;--section:#edf1f3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:inherit}.header{background:var(--nav);color:#fff;border-bottom:4px solid var(--accent)}.head{max-width:1180px;margin:auto;padding:16px 22px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}.logo{font-size:1.35rem;font-weight:bold}.nav{display:flex;gap:4px;flex-wrap:wrap}.nav a{text-decoration:none;padding:7px 10px;border-radius:5px;font-size:.9rem}.nav a:hover{background:#ffffff1c}
+.page{max-width:1180px;margin:24px auto;padding:0 18px 50px}.hero,.card,.resource{background:var(--paper);border:1px solid var(--line);border-radius:10px}.hero{padding:30px;margin-bottom:20px}.hero h1{margin:0 0 8px;font-size:2rem}.hero p{margin:0;color:var(--muted);max-width:850px}.toolbar{display:flex;gap:10px;margin-top:20px}.search{flex:1;padding:11px 13px;border:1px solid #cbd3d9;border-radius:7px;font-size:1rem}.btn{border:0;border-radius:7px;background:var(--accent);color:white;padding:11px 15px;cursor:pointer;font-weight:bold}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:20px}.side{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;align-self:start;position:sticky;top:15px}.side b{display:block;margin-bottom:8px}.side a{display:block;text-decoration:none;color:var(--accent);padding:6px 4px;border-radius:5px;font-size:.92rem}.side a:hover{background:var(--soft)}
+.card{margin-bottom:18px;overflow:hidden}.cardhead{padding:16px 20px;background:var(--section);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.cardhead h2{margin:0;font-size:1.3rem}.cardhead span{color:var(--muted);font-size:.85rem}.topics{display:grid;grid-template-columns:1fr 1fr}.topic{padding:12px 18px;border-bottom:1px solid #e5e8eb;text-decoration:none;display:flex;justify-content:space-between}.topic:hover{background:#f8fbfc;color:var(--accent)}.topic small{color:var(--muted)}.empty{display:none;padding:25px;background:white;border:1px solid var(--line);border-radius:10px;color:var(--muted)}
+.resource{padding:25px;margin-top:20px}.resource h2{margin-top:0;color:var(--accent)}.footer{text-align:center;color:var(--muted);font-size:.85rem;padding:25px 10px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.side{position:static}.topics{grid-template-columns:1fr}}
+@media(max-width:520px){.head{padding:14px}.page{padding:0 10px 40px}.hero{padding:22px}.hero h1{font-size:1.65rem}.toolbar{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="header"><div class="head">
+<div class="logo">Scuola Tecnica</div>
+<nav class="nav"><a href="#home">Home</a><a href="#discipline">Discipline</a><a href="#risorse">Risorse</a><a href="#info">Info</a></nav>
+</div></header>
+
+<div class="page" id="home">
+<section class="hero">
+<h1>Appunti, teoria ed esercizi</h1>
+<p>Pagina iniziale del tuo portale didattico. Qui potrai raccogliere e organizzare tutti i contenuti delle diverse discipline.</p>
+<div class="toolbar"><input id="search" class="search" placeholder="Cerca una disciplina o un argomento..." oninput="cerca()"><button class="btn" onclick="tutto()">Mostra tutto</button></div>
+</section>
+
+<div class="layout">
+<aside class="side"><b>Indice</b>
+<a href="#meccanica">Meccanica</a><a href="#macchine">Macchine</a><a href="#elettrotecnica">Elettrotecnica</a><a href="#elettronica">Elettronica</a><a href="#informatica">Informatica</a><a href="#matematica">Matematica</a><a href="#chimica">Chimica</a><a href="#fisica">Fisica</a><a href="#risorse">Risorse</a>
+</aside>
+
+<main id="discipline">
+<div class="card" id="meccanica"><div class="cardhead"><h2>Meccanica</h2><span>Statica · Cinematica · Dinamica</span></div><div class="topics">
+<a class="topic" href="meccanica/statica.html">Statica <small>→</small></a><a class="topic" href="meccanica/vettori.html">Vettori e forze <small>→</small></a><a class="topic" href="meccanica/momenti.html">Momento di una forza <small>→</small></a><a class="topic" href="meccanica/cinematica.html">Cinematica <small>→</small></a><a class="topic" href="meccanica/dinamica.html">Dinamica <small>→</small></a><a class="topic" href="meccanica/energia.html">Lavoro ed energia <small>→</small></a>
+</div></div>
+
+<div class="card" id="macchine"><div class="cardhead"><h2>Macchine</h2><span>Fluidi · Motori · Pompe · Impianti</span></div><div class="topics">
+<a class="topic" href="macchine/idrostatica.html">Idrostatica <small>→</small></a><a class="topic" href="macchine/idrodinamica.html">Idrodinamica <small>→</small></a><a class="topic" href="macchine/pompe.html">Pompe <small>→</small></a><a class="topic" href="macchine/motori.html">Motori <small>→</small></a><a class="topic" href="macchine/turbine.html">Turbine <small>→</small></a><a class="topic" href="macchine/termodinamica.html">Termodinamica <small>→</small></a>
+</div></div>
+
+<div class="card" id="elettrotecnica"><div class="cardhead"><h2>Elettrotecnica</h2><span>Circuiti · Corrente · Misure</span></div><div class="topics">
+<a class="topic" href="elettrotecnica/grandezze.html">Grandezze elettriche <small>→</small></a><a class="topic" href="elettrotecnica/ohm.html">Legge di Ohm <small>→</small></a><a class="topic" href="elettrotecnica/kirchhoff.html">Leggi di Kirchhoff <small>→</small></a><a class="topic" href="elettrotecnica/circuiti.html">Circuiti elettrici <small>→</small></a>
+</div></div>
+
+<div class="card" id="elettronica"><div class="cardhead"><h2>Elettronica</h2><span>Analogica · Digitale</span></div><div class="topics">
+<a class="topic" href="elettronica/diodi.html">Diodi <small>→</small></a><a class="topic" href="elettronica/transistor.html">Transistor <small>→</small></a><a class="topic" href="elettronica/opamp.html">Amplificatori operazionali <small>→</small></a><a class="topic" href="elettronica/digitale.html">Elettronica digitale <small>→</small></a>
+</div></div>
+
+<div class="card" id="informatica"><div class="cardhead"><h2>Informatica</h2><span>Programmazione · Web · Reti</span></div><div class="topics">
+<a class="topic" href="informatica/html.html">HTML e CSS <small>→</small></a><a class="topic" href="informatica/javascript.html">JavaScript <small>→</small></a><a class="topic" href="informatica/programmazione.html">Programmazione <small>→</small></a><a class="topic" href="informatica/reti.html">Reti <small>→</small></a>
+</div></div>
+
+<div class="card" id="matematica"><div class="cardhead"><h2>Matematica</h2><span>Algebra · Geometria · Analisi</span></div><div class="topics">
+<a class="topic" href="matematica/algebra.html">Algebra <small>→</small></a><a class="topic" href="matematica/geometria.html">Geometria <small>→</small></a><a class="topic" href="matematica/funzioni.html">Funzioni <small>→</small></a><a class="topic" href="matematica/derivate.html">Derivate e integrali <small>→</small></a>
+</div></div>
+
+<div class="card" id="chimica"><div class="cardhead"><h2>Chimica</h2><span>Materia · Reazioni · Materiali</span></div><div class="topics">
+<a class="topic" href="chimica/atomo.html">Struttura dell'atomo <small>→</small></a><a class="topic" href="chimica/tavola-periodica.html">Tavola periodica <small>→</small></a><a class="topic" href="chimica/reazioni.html">Reazioni chimiche <small>→</small></a><a class="topic" href="chimica/materiali.html">Materiali <small>→</small></a>
+</div></div>
+
+<div class="card" id="fisica"><div class="cardhead"><h2>Fisica</h2><span>Meccanica · Termologia · Onde</span></div><div class="topics">
+<a class="topic" href="fisica/meccanica.html">Meccanica <small>→</small></a><a class="topic" href="fisica/termologia.html">Termologia <small>→</small></a><a class="topic" href="fisica/onde.html">Onde <small>→</small></a><a class="topic" href="fisica/elettromagnetismo.html">Elettromagnetismo <small>→</small></a>
+</div></div>
+
+<div class="empty" id="empty">Nessun risultato trovato.</div>
+</main></div>
+
+<section class="resource" id="risorse"><h2>Risorse</h2><p>Qui puoi raccogliere formulari, esercizi, verifiche, PDF, video e simulatori.</p><div class="topics">
+<a class="topic" href="risorse/formulari.html">Formulari <small>→</small></a><a class="topic" href="risorse/esercizi.html">Esercizi <small>→</small></a><a class="topic" href="risorse/verifiche.html">Verifiche <small>→</small></a><a class="topic" href="risorse/download.html">Download <small>→</small></a>
+</div></section>
+<footer class="footer" id="info">Portale didattico personale · Struttura originale ispirata all'organizzazione di siti tecnico-didattici.</footer>
+</div>
+
+<script>
+function cerca(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ let n=0;
+ document.querySelectorAll('.card').forEach(c=>{
+   let ok=false;
+   c.querySelectorAll('.topic').forEach(t=>{
+     const yes=!q||t.textContent.toLowerCase().includes(q)||c.querySelector('h2').textContent.toLowerCase().includes(q);
+     t.style.display=yes?'flex':'none'; if(yes)ok=true;
+   });
+   c.style.display=ok?'block':'none'; if(ok)n++;
+ });
+ document.getElementById('empty').style.display=n?'none':'block';
+}
+function tutto(){
+ document.getElementById('search').value='';
+ document.querySelectorAll('.card').forEach(c=>c.style.display='block');
+ document.querySelectorAll('.topic').forEach(t=>t.style.display='flex');
+ document.getElementById('empty').style.display='none';
+}
+</script>
+</body>
+</html>
