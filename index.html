@@ -16,40 +16,42 @@
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 
-                <!-- Logo & Selector In Alto a Sinistra -->
-                <div class="flex items-center gap-4">
-                    <a href="index.html" class="flex items-center gap-3 group">
+                <!-- Logo & Selettore Indirizzo -->
+                <div class="flex items-center gap-3 sm:gap-6">
+                    <a href="index.html" class="flex items-center gap-2.5 group">
                         <div id="logoBg" class="p-2 bg-blue-600 rounded-lg transition-colors duration-300">
-                            <i id="logoIcon" data-lucide="book-open" class="w-6 h-6 text-white"></i>
+                            <i id="logoIcon" data-lucide="cpu" class="w-5 h-5 text-white"></i>
                         </div>
-                        <span class="font-bold text-xl tracking-tight text-white hidden sm:inline">Portale<span id="logoText" class="text-blue-500 transition-colors duration-300">Tecnico</span></span>
+                        <span class="font-bold text-lg tracking-tight text-white hidden md:inline">
+                            Scuola<span id="logoText" class="text-blue-500 transition-colors duration-300">Tecnica</span>
+                        </span>
                     </a>
 
-                    <!-- Selettore di Indirizzo integrato -->
-                    <div class="bg-slate-800 p-1 rounded-xl border border-slate-700 flex items-center gap-1">
+                    <!-- Switch tra Indirizzi -->
+                    <div class="bg-slate-800 p-1 rounded-xl border border-slate-700 flex items-center gap-1 shadow-inner">
                         <button id="btnTecnica" onclick="switchAddress('tecnica')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-blue-600 text-white shadow">
-                            <i data-lucide="cpu" class="w-3.5 h-3.5 inline mr-1"></i> Scuola Tecnica
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 inline mr-1"></i> Tecnica
                         </button>
                         <button id="btnUmanistica" onclick="switchAddress('umanistica')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-white">
-                            <i data-lucide="feather" class="w-3.5 h-3.5 inline mr-1"></i> Scuola Umanistica
+                            <i data-lucide="feather" class="w-3.5 h-3.5 inline mr-1"></i> Umanistica
                         </button>
                     </div>
                 </div>
 
-                <!-- MENU DINAMICO AREA TECNICA -->
-                <nav id="menuTecnica" class="hidden lg:flex items-center gap-1 transition-all duration-300">
-                    <a href="index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-blue-400">Home</a>
+                <!-- ================= NAVBAR AREA TECNICA ================= -->
+                <nav id="menuTecnica" class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="px-3 py-2 text-sm font-semibold text-blue-400 border-b-2 border-blue-500">Home Tecnica</a>
                     
-                    <!-- Dropdown Meccanica & Macchine -->
+                    <!-- Dropdown Meccanica -->
                     <div class="relative group">
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Meccanica <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <span class="px-4 py-1 text-xs font-semibold text-blue-400 uppercase tracking-wider block">Meccanica</span>
                             <a href="meccanica/statica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Statica</a>
                             <a href="meccanica/dinamica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Dinamica</a>
@@ -66,7 +68,7 @@
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Chimica <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <a href="chimica/organica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Chimica Organica</a>
                             <a href="chimica/analitica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Chimica Analitica</a>
                             <a href="chimica/atomo.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Struttura dell'Atomo</a>
@@ -78,7 +80,7 @@
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Igiene <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <a href="igiene/epidemiologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Epidemiologia</a>
                             <a href="igiene/microbiologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Microbiologia</a>
                             <a href="igiene/prevenzione.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Prevenzione e Sanità</a>
@@ -89,16 +91,16 @@
                     <a href="informatica/programmazione.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white">Informatica</a>
                 </nav>
 
-                <!-- MENU DINAMICO AREA UMANISTICA -->
-                <nav id="menuUmanistica" class="hidden lg:flex items-center gap-1 transition-all duration-300">
-                    <a href="index.html" class="px-3 py-2 text-sm font-medium text-white hover:text-amber-400">Home</a>
+                <!-- ================= NAVBAR AREA UMANISTICA ================= -->
+                <nav id="menuUmanistica" class="hidden lg:flex items-center gap-1">
+                    <a href="index.html" class="px-3 py-2 text-sm font-semibold text-amber-400 border-b-2 border-amber-500">Home Umanistica</a>
                     
                     <!-- Dropdown Italiano -->
                     <div class="relative group">
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Italiano <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <a href="umanistica/italiano/dante.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Dante e Commedia</a>
                             <a href="umanistica/italiano/petrarca.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Petrarca & Boccaccio</a>
                             <a href="umanistica/italiano/novecento.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Letteratura del '900</a>
@@ -110,10 +112,10 @@
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Storia <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <a href="umanistica/storia/eta-moderna.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Età Moderna</a>
                             <a href="umanistica/storia/risorgimento.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Risorgimento</a>
-                            <a href="umanistica/storia/novecento.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Il Novecento e Guerre</a>
+                            <a href="umanistica/storia/novecento.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Il Novecento</a>
                         </div>
                     </div>
 
@@ -122,7 +124,7 @@
                         <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1">
                             Filosofia <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-xl border border-slate-700 py-2 hidden group-hover:block">
+                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block">
                             <a href="umanistica/filosofia/greca.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Filosofia Greca</a>
                             <a href="umanistica/filosofia/kant.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Illuminismo e Kant</a>
                             <a href="umanistica/filosofia/nietzsche.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Nietzsche e '900</a>
@@ -157,11 +159,10 @@
             </div>
         </section>
 
-        <!-- Container Sezioni Tecniche -->
-        <section id="sectionTecnica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 transition-all duration-300">
+        <!-- Contenuto Schede Tecniche -->
+        <section id="sectionTecnica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cards-grid">
                 
-                <!-- Card Chimica -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition">
                     <div class="p-3 bg-purple-500/10 rounded-xl w-fit text-purple-400 mb-4">
                         <i data-lucide="flask-conical" class="w-6 h-6"></i>
@@ -174,7 +175,6 @@
                     </div>
                 </div>
 
-                <!-- Card Igiene -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-rose-500/50 transition">
                     <div class="p-3 bg-rose-500/10 rounded-xl w-fit text-rose-400 mb-4">
                         <i data-lucide="heart-pulse" class="w-6 h-6"></i>
@@ -187,7 +187,6 @@
                     </div>
                 </div>
 
-                <!-- Card Meccanica -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-blue-500/50 transition">
                     <div class="p-3 bg-blue-500/10 rounded-xl w-fit text-blue-400 mb-4">
                         <i data-lucide="cog" class="w-6 h-6"></i>
@@ -200,75 +199,46 @@
                     </div>
                 </div>
 
-                <!-- Card Elettrotecnica -->
-                <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition">
-                    <div class="p-3 bg-amber-500/10 rounded-xl w-fit text-amber-400 mb-4">
-                        <i data-lucide="zap" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Elettrotecnica</h3>
-                    <p class="text-slate-400 text-sm mb-4">Legge di Ohm, circuiti, Kirchhoff e componenti.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="elettrotecnica/ohm.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">Ohm</a>
-                        <a href="elettrotecnica/kirchhoff.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">Kirchhoff</a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- Container Sezioni Umanistiche (Inizialmente nascosto) -->
-        <section id="sectionUmanistica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 hidden transition-all duration-300">
+        <!-- Contenuto Schede Umanistiche -->
+        <section id="sectionUmanistica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 hidden">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cards-grid">
                 
-                <!-- Card Letteratura Italiana -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition">
                     <div class="p-3 bg-amber-500/10 rounded-xl w-fit text-amber-400 mb-4">
                         <i data-lucide="book-marked" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Italiano e Letteratura</h3>
-                    <p class="text-slate-400 text-sm mb-4">Dante, Petrarca, Divina Commedia, Verismo e il Novecento.</p>
+                    <p class="text-slate-400 text-sm mb-4">Dante, Petrarca, Divina Commedia e Novecento.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="umanistica/italiano/dante.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">Dante</a>
                         <a href="umanistica/italiano/novecento.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">Novecento</a>
                     </div>
                 </div>
 
-                <!-- Card Storia -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-red-500/50 transition">
                     <div class="p-3 bg-red-500/10 rounded-xl w-fit text-red-400 mb-4">
                         <i data-lucide="landmark" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Storia</h3>
-                    <p class="text-slate-400 text-sm mb-4">Età moderna, Rivoluzioni, le Guerre Mondiali e il Risorgimento.</p>
+                    <p class="text-slate-400 text-sm mb-4">Età moderna, Risorgimento e le Guerre Mondiali.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="umanistica/storia/novecento.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Novecento</a>
                         <a href="umanistica/storia/risorgimento.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Risorgimento</a>
                     </div>
                 </div>
 
-                <!-- Card Filosofia -->
                 <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-violet-500/50 transition">
                     <div class="p-3 bg-violet-500/10 rounded-xl w-fit text-violet-400 mb-4">
                         <i data-lucide="brain" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Filosofia</h3>
-                    <p class="text-slate-400 text-sm mb-4">Pensiero antico, Cartesio, Kant, Hegel e Nietzsche.</p>
+                    <p class="text-slate-400 text-sm mb-4">Pensiero antico, Cartesio, Kant e Nietzsche.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="umanistica/filosofia/kant.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-violet-600 hover:text-white transition">Kant</a>
                         <a href="umanistica/filosofia/nietzsche.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-violet-600 hover:text-white transition">Nietzsche</a>
-                    </div>
-                </div>
-
-                <!-- Card Storia dell'Arte -->
-                <div class="topic-card bg-slate-800/60 border border-slate-700 rounded-2xl p-6 hover:border-pink-500/50 transition">
-                    <div class="p-3 bg-pink-500/10 rounded-xl w-fit text-pink-400 mb-4">
-                        <i data-lucide="palette" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Storia dell'Arte</h3>
-                    <p class="text-slate-400 text-sm mb-4">Rinascimento, Barocco, Impressionismo e le Avanguardie.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <a href="umanistica/arte/rinascimento.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-pink-600 hover:text-white transition">Rinascimento</a>
-                        <a href="umanistica/arte/impressionismo.html" class="text-xs bg-slate-700 text-slate-300 px-2.5 py-1 rounded-md hover:bg-pink-600 hover:text-white transition">Impressionismo</a>
                     </div>
                 </div>
 
@@ -279,69 +249,60 @@
     <!-- Footer -->
     <footer class="bg-slate-950 border-t border-slate-800 py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-            <p>© Portale Scolastico — Materiale didattico integrato per studenti.</p>
+            <p>© Portale Scolastico — Materiale didattico per studenti.</p>
         </div>
     </footer>
 
-    <!-- Script Gestione Switch Menu & Contenuti -->
+    <!-- Script Switch Dinamico -->
     <script>
         lucide.createIcons();
 
         function switchAddress(mode) {
-            // Elementi Menu Navigazione
             const menuTecnica = document.getElementById('menuTecnica');
             const menuUmanistica = document.getElementById('menuUmanistica');
-
-            // Elementi Contenuto Pagina
             const secTecnica = document.getElementById('sectionTecnica');
             const secUmanistica = document.getElementById('sectionUmanistica');
 
-            // Pulsanti e Logo
             const btnTecnica = document.getElementById('btnTecnica');
             const btnUmanistica = document.getElementById('btnUmanistica');
             const logoBg = document.getElementById('logoBg');
             const logoText = document.getElementById('logoText');
+            const logoIcon = document.getElementById('logoIcon');
             const heroTitle = document.getElementById('heroTitle');
             const heroSubtitle = document.getElementById('heroSubtitle');
 
             if (mode === 'tecnica') {
-                // Mostra Menu e Sezione Tecnica
-                menuTecnica.classList.remove('hidden');
-                menuTecnica.classList.add('flex');
-                menuUmanistica.classList.add('hidden');
-                menuUmanistica.classList.remove('flex');
-
+                // Mostra Navbar e Schede Tecniche
+                menuTecnica.style.display = 'flex';
+                menuUmanistica.style.display = 'none';
                 secTecnica.classList.remove('hidden');
                 secUmanistica.classList.add('hidden');
-                
-                // Stili Pulsanti
+
+                // Stili Pulsanti Switch
                 btnTecnica.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-blue-600 text-white shadow";
                 btnUmanistica.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-white";
-                
-                // Logo & Hero
-                logoBg.className = "p-2 bg-blue-600 rounded-lg transition-colors duration-300";
-                logoText.textContent = "Tecnico";
-                logoText.className = "text-blue-500 transition-colors duration-300";
 
+                // Brand e Hero
+                logoBg.className = "p-2 bg-blue-600 rounded-lg transition-colors duration-300";
+                logoText.textContent = "Tecnica";
+                logoText.className = "text-blue-500 transition-colors duration-300";
+                
                 heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>';
                 heroSubtitle.textContent = "Esplora i moduli di Meccanica, Chimica Organica, Analitica, Igiene, Elettrotecnica e Informatica.";
             } else {
-                // Mostra Menu e Sezione Umanistica
-                menuUmanistica.classList.remove('hidden');
-                menuUmanistica.classList.add('flex');
-                menuTecnica.classList.add('hidden');
-                menuTecnica.classList.remove('flex');
-
+                // Mostra Navbar e Schede Umanistiche
+                menuTecnica.style.display = 'none';
+                menuUmanistica.style.display = 'flex';
                 secTecnica.classList.add('hidden');
                 secUmanistica.classList.remove('hidden');
 
-                // Stili Pulsanti
+                // Stili Pulsanti Switch
                 btnUmanistica.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 bg-amber-600 text-white shadow";
                 btnTecnica.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-white";
 
-                // Logo & Hero
+                // Brand e Hero
                 logoBg.className = "p-2 bg-amber-600 rounded-lg transition-colors duration-300";
-                logoText.textContent = "Umanistico";
+                logoText.textContent = "Umanistica";
                 logoText.className = "text-amber-500 transition-colors duration-300";
 
                 heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">Area Umanistica</span>';
@@ -349,7 +310,7 @@
             }
         }
 
-        // Imposta il menu di default all'avvio
+        // Inizializzazione all'avvio
         switchAddress('tecnica');
 
         function filterTopics() {
