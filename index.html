@@ -27,7 +27,7 @@
                             <i id="logoIcon" data-lucide="cpu" class="w-5 h-5 text-white"></i>
                         </div>
                         <span class="font-bold text-lg tracking-tight text-white hidden md:inline">
-                            Scuola<span id="logoText" class="text-blue-500 transition-colors duration-300">Tecnica</span>
+                            Scuola <span id="logoText" class="text-blue-500 transition-colors duration-300">Tecnica</span>
                         </span>
                     </a>
 
@@ -253,7 +253,7 @@
         </div>
     </footer>
 
-    <!-- Script Switch Dinamico -->
+    <!-- Script Switch Corretto e Robusto -->
     <script>
         lucide.createIcons();
 
@@ -267,14 +267,18 @@
             const btnUmanistica = document.getElementById('btnUmanistica');
             const logoBg = document.getElementById('logoBg');
             const logoText = document.getElementById('logoText');
-            const logoIcon = document.getElementById('logoIcon');
             const heroTitle = document.getElementById('heroTitle');
             const heroSubtitle = document.getElementById('heroSubtitle');
 
             if (mode === 'tecnica') {
-                // Mostra Navbar e Schede Tecniche
-                menuTecnica.style.display = 'flex';
-                menuUmanistica.style.display = 'none';
+                // Gestione Navbar (Switch rigoroso tramite classi Tailwind)
+                menuTecnica.classList.remove('hidden');
+                menuTecnica.classList.add('lg:flex');
+                
+                menuUmanistica.classList.add('hidden');
+                menuUmanistica.classList.remove('lg:flex');
+
+                // Switch Sezioni
                 secTecnica.classList.remove('hidden');
                 secUmanistica.classList.add('hidden');
 
@@ -290,9 +294,14 @@
                 heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>';
                 heroSubtitle.textContent = "Esplora i moduli di Meccanica, Chimica Organica, Analitica, Igiene, Elettrotecnica e Informatica.";
             } else {
-                // Mostra Navbar e Schede Umanistiche
-                menuTecnica.style.display = 'none';
-                menuUmanistica.style.display = 'flex';
+                // Gestione Navbar (Switch rigoroso tramite classi Tailwind)
+                menuUmanistica.classList.remove('hidden');
+                menuUmanistica.classList.add('lg:flex');
+
+                menuTecnica.classList.add('hidden');
+                menuTecnica.classList.remove('lg:flex');
+
+                // Switch Sezioni
                 secTecnica.classList.add('hidden');
                 secUmanistica.classList.remove('hidden');
 
