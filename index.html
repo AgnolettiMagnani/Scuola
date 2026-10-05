@@ -19,9 +19,9 @@
                 <!-- Logo & Switch -->
                 <div class="flex items-center gap-2 sm:gap-4 shrink-0">
                     <a href="index.html" class="flex items-center gap-2">
-                        <!-- Contenitore Icona Logo: Sostituito via JS -->
+                        <!-- Icona Logo -->
                         <div id="logoBg" class="p-2 bg-blue-600 rounded-lg transition-colors flex items-center justify-center">
-                            <span id="logoIconContainer">
+                            <span id="logoIconContainer" class="flex items-center justify-center">
                                 <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
                             </span>
                         </div>
@@ -32,19 +32,19 @@
 
                     <!-- Switch Indirizzo -->
                     <div class="bg-slate-800 p-1 rounded-xl border border-slate-700 flex items-center gap-1">
-                        <button id="btnTecnica" onclick="switchAddress('tecnica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center">
+                        <button type="button" id="btnTecnica" onclick="switchAddress('tecnica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center">
                             <i data-lucide="cpu" class="w-3.5 h-3.5 mr-1"></i>
                             <span>Tecnica</span>
                         </button>
-                        <button id="btnUmanistica" onclick="switchAddress('umanistica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center">
+                        <button type="button" id="btnUmanistica" onclick="switchAddress('umanistica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center">
                             <i data-lucide="feather" class="w-3.5 h-3.5 mr-1"></i>
                             <span>Umanistica</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- Pulsante Menu Hamburger per Mobile -->
-                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                <!-- Pulsante Hamburger Mobile -->
+                <button type="button" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
 
@@ -56,7 +56,7 @@
                         <a href="index.html" class="px-3 py-2 text-sm font-semibold text-blue-400 border-b-2 border-blue-500 whitespace-nowrap">Home Tecnica</a>
                         
                         <div class="relative group py-2">
-                            <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
+                            <button type="button" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
                                 Meccanica <i data-lucide="chevron-down" class="w-4 h-4"></i>
                             </button>
                             <div class="absolute left-0 top-full w-48 hidden group-hover:block z-50 pt-1">
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="relative group py-2">
-                            <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
+                            <button type="button" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
                                 Chimica <i data-lucide="chevron-down" class="w-4 h-4"></i>
                             </button>
                             <div class="absolute left-0 top-full w-52 hidden group-hover:block z-50 pt-1">
@@ -90,11 +90,11 @@
                     </div>
 
                     <!-- MENU UMANISTICO DESKTOP -->
-                    <div id="navUmanisticaDesktop" class="flex items-center gap-1" style="display: none !important;">
+                    <div id="navUmanisticaDesktop" class="hidden items-center gap-1">
                         <a href="index.html" class="px-3 py-2 text-sm font-semibold text-amber-400 border-b-2 border-amber-500 whitespace-nowrap">Home Umanistica</a>
                         
                         <div class="relative group py-2">
-                            <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
+                            <button type="button" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
                                 Italiano <i data-lucide="chevron-down" class="w-4 h-4"></i>
                             </button>
                             <div class="absolute left-0 top-full w-52 hidden group-hover:block z-50 pt-1">
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <!-- MENU MOBILE (Tendina a Scomparsa) -->
+        <!-- MENU MOBILE -->
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2">
             <!-- Voci Tecnica Mobile -->
             <div id="navTecnicaMobile" class="space-y-1">
@@ -127,7 +127,7 @@
             </div>
 
             <!-- Voci Umanistica Mobile -->
-            <div id="navUmanisticaMobile" class="space-y-1" style="display: none !important;">
+            <div id="navUmanisticaMobile" class="hidden space-y-1">
                 <a href="index.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-amber-400 bg-slate-800">Home Umanistica</a>
                 <a href="umanistica/italiano/dante.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Italiano: Dante</a>
                 <a href="umanistica/storia/novecento.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Storia: Novecento</a>
@@ -161,7 +161,6 @@
         <section id="sectionTecnica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Card Meccanica -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 transition shadow-lg">
                     <div class="p-3 bg-blue-500/10 rounded-xl w-fit text-blue-400 mb-4">
                         <i data-lucide="cog" class="w-6 h-6"></i>
@@ -175,7 +174,6 @@
                     </div>
                 </div>
 
-                <!-- Card Chimica -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-purple-500/50 transition shadow-lg">
                     <div class="p-3 bg-purple-500/10 rounded-xl w-fit text-purple-400 mb-4">
                         <i data-lucide="flask-conical" class="w-6 h-6"></i>
@@ -188,7 +186,6 @@
                     </div>
                 </div>
 
-                <!-- Card Igiene e Sanità -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-rose-500/50 transition shadow-lg">
                     <div class="p-3 bg-rose-500/10 rounded-xl w-fit text-rose-400 mb-4">
                         <i data-lucide="heart-pulse" class="w-6 h-6"></i>
@@ -201,7 +198,6 @@
                     </div>
                 </div>
 
-                <!-- Card Elettrotecnica -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-yellow-500/50 transition shadow-lg">
                     <div class="p-3 bg-yellow-500/10 rounded-xl w-fit text-yellow-400 mb-4">
                         <i data-lucide="zap" class="w-6 h-6"></i>
@@ -213,7 +209,6 @@
                     </div>
                 </div>
 
-                <!-- Card Informatica -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition shadow-lg">
                     <div class="p-3 bg-emerald-500/10 rounded-xl w-fit text-emerald-400 mb-4">
                         <i data-lucide="code" class="w-6 h-6"></i>
@@ -229,10 +224,9 @@
         </section>
 
         <!-- SEZIONE SCHEDE AREA UMANISTICA -->
-        <section id="sectionUmanistica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" style="display: none !important;">
+        <section id="sectionUmanistica" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Card Italiano -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-amber-500/50 transition shadow-lg">
                     <div class="p-3 bg-amber-500/10 rounded-xl w-fit text-amber-400 mb-4">
                         <i data-lucide="book-open" class="w-6 h-6"></i>
@@ -245,7 +239,6 @@
                     </div>
                 </div>
 
-                <!-- Card Storia -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-red-500/50 transition shadow-lg">
                     <div class="p-3 bg-red-500/10 rounded-xl w-fit text-red-400 mb-4">
                         <i data-lucide="landmark" class="w-6 h-6"></i>
@@ -257,7 +250,6 @@
                     </div>
                 </div>
 
-                <!-- Card Filosofia -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-violet-500/50 transition shadow-lg">
                     <div class="p-3 bg-violet-500/10 rounded-xl w-fit text-violet-400 mb-4">
                         <i data-lucide="brain" class="w-6 h-6"></i>
@@ -269,7 +261,6 @@
                     </div>
                 </div>
 
-                <!-- Card Arte -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-pink-500/50 transition shadow-lg">
                     <div class="p-3 bg-pink-500/10 rounded-xl w-fit text-pink-400 mb-4">
                         <i data-lucide="palette" class="w-6 h-6"></i>
@@ -292,10 +283,12 @@
         </div>
     </footer>
 
-    <!-- Script JavaScript -->
+    <!-- Script JavaScript Corretto -->
     <script>
-        // Inizializza le icone
-        lucide.createIcons();
+        // Inizializzazione iconografia Lucide
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
 
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobileMenu');
@@ -303,33 +296,104 @@
         }
 
         function switchAddress(mode) {
+            // Elementi Navigazione
             const navTecnicaDesktop = document.getElementById('navTecnicaDesktop');
             const navUmanisticaDesktop = document.getElementById('navUmanisticaDesktop');
             const navTecnicaMobile = document.getElementById('navTecnicaMobile');
             const navUmanisticaMobile = document.getElementById('navUmanisticaMobile');
 
+            // Sezioni
             const secTecnica = document.getElementById('sectionTecnica');
             const secUmanistica = document.getElementById('sectionUmanistica');
 
+            // Elementi UI Logo e Bottoni
             const btnTecnica = document.getElementById('btnTecnica');
             const btnUmanistica = document.getElementById('btnUmanistica');
             const logoBg = document.getElementById('logoBg');
             const logoText = document.getElementById('logoText');
-            const logoIconContainer = document.getElementById('logoIconContainer');
+            const logoContainer = document.getElementById('logoIconContainer');
             const heroTitle = document.getElementById('heroTitle');
             const heroSubtitle = document.getElementById('heroSubtitle');
 
             if (mode === 'tecnica') {
-                // Desktop Nav
-                navTecnicaDesktop.style.setProperty('display', 'flex', 'important');
-                navUmanisticaDesktop.style.setProperty('display', 'none', 'important');
-                
-                // Mobile Nav
-                navTecnicaMobile.style.setProperty('display', 'block', 'important');
-                navUmanisticaMobile.style.setProperty('display', 'none', 'important');
+                // Desktop
+                navTecnicaDesktop.classList.remove('hidden');
+                navTecnicaDesktop.classList.add('flex');
+                navUmanisticaDesktop.classList.add('hidden');
+                navUmanisticaDesktop.classList.remove('flex');
+
+                // Mobile
+                navTecnicaMobile.classList.remove('hidden');
+                navUmanisticaMobile.classList.add('hidden');
 
                 // Sezioni
-                secTecnica.style.setProperty('display', 'block', 'important');
-                secUmanistica.style.setProperty('display', 'none', 'important');
+                secTecnica.classList.remove('hidden');
+                secUmanistica.classList.add('hidden');
 
-                // Bottoni
+                // Stile Bottoni Switch
+                btnTecnica.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center";
+                btnUmanistica.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center";
+
+                // Testo e Icona Logo
+                logoBg.className = "p-2 bg-blue-600 rounded-lg transition-colors flex items-center justify-center";
+                logoText.textContent = "Tecnica";
+                logoText.className = "text-blue-500";
+                
+                // Ricostruzione DOM per Icona
+                logoContainer.innerHTML = '<i data-lucide="cpu" class="w-5 h-5 text-white"></i>';
+
+                // Testi Hero
+                heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>';
+                heroSubtitle.textContent = "Esplora i moduli dell'Area Tecnica.";
+            } else {
+                // Desktop
+                navTecnicaDesktop.classList.add('hidden');
+                navTecnicaDesktop.classList.remove('flex');
+                navUmanisticaDesktop.classList.remove('hidden');
+                navUmanisticaDesktop.classList.add('flex');
+
+                // Mobile
+                navTecnicaMobile.classList.add('hidden');
+                navUmanisticaMobile.classList.remove('hidden');
+
+                // Sezioni
+                secTecnica.classList.add('hidden');
+                secUmanistica.classList.remove('hidden');
+
+                // Stile Bottoni Switch
+                btnUmanistica.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow cursor-pointer flex items-center";
+                btnTecnica.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center";
+
+                // Testo e Icona Logo
+                logoBg.className = "p-2 bg-amber-600 rounded-lg transition-colors flex items-center justify-center";
+                logoText.textContent = "Umanistica";
+                logoText.className = "text-amber-500";
+
+                // Ricostruzione DOM per Icona
+                logoContainer.innerHTML = '<i data-lucide="feather" class="w-5 h-5 text-white"></i>';
+
+                // Testi Hero
+                heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">Area Umanistica</span>';
+                heroSubtitle.textContent = "Esplora i moduli dell'Area Umanistica.";
+            }
+
+            // Rigenerazione icone Lucide
+            lucide.createIcons();
+        }
+
+        function filterTopics() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const secTecnica = document.getElementById('sectionTecnica');
+            const secUmanistica = document.getElementById('sectionUmanistica');
+
+            const activeSection = !secTecnica.classList.contains('hidden') ? secTecnica : secUmanistica;
+            const cards = activeSection.querySelectorAll('.subject-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
