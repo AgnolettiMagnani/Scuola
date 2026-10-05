@@ -3,295 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idrostatica - Portale Scolastico</title>
+    <title>Idrostatica - Teoria ed Esercizi</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- MathJax per formule matematiche -->
+    <!-- MathJax per Formule Matematiche -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.com/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
 
-    <!-- Header / Navigation -->
+    <!-- Header Navigation -->
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="p-2 bg-blue-600 rounded-lg">
-                        <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
-                    </div>
-                    <span class="font-bold text-base sm:text-lg tracking-tight text-white">
-                        Scuola <span class="text-blue-500">Tecnica</span>
-                    </span>
-                </a>
-
-                <!-- Torna alla Home -->
-                <a href="index.html" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition flex items-center gap-2 shadow">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <a href="index.html" class="flex items-center gap-2 text-cyan-400 font-bold hover:text-cyan-300 transition">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
                     <span>Torna alla Home</span>
                 </a>
+                <span class="text-sm font-semibold text-slate-400">Meccanica & Macchine / Idrostatica</span>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        
-        <!-- Intestazione Pagina -->
-        <div class="mb-10">
-            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">
-                <span>Meccanica & Macchine</span>
-                <span>•</span>
-                <span>Fluidodinamica Statico-Differenziale</span>
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow space-y-12">
+
+        <!-- Titolo Principale -->
+        <div class="border-b border-slate-800 pb-6">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="p-2.5 bg-cyan-500/10 rounded-xl text-cyan-400">
+                    <i data-lucide="waves" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Idrostatica</h1>
             </div>
-            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
-                Idrostatica
-            </h1>
-            <p class="text-slate-400 text-base sm:text-lg max-w-3xl">
-                Studio dell'equilibrio dei fluidi in quiete, analisi delle pressioni esercitate e principi fisici fondamentali per l'ingegneria meccanica e idraulica.
+            <p class="text-slate-400 text-base sm:text-lg">
+                Studio dei fluidi in condizioni di riposo o in equilibrio, forze di pressione, leggi fondamentali ed esercizi svolti.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            <!-- Colonna Principale (Contenuto Didattico) -->
-            <div class="lg:col-span-2 space-y-8">
-
-                <!-- 1. Pressione e Densità -->
-                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-cyan-500/10 rounded-xl text-cyan-400">
-                            <i data-lucide="gauge" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">1. Pressione Idrostatica e Densità</h2>
-                    </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        L'<strong>idrostatica</strong> si occupa dello studio dei fluidi (liquidi e gas) quando si trovano in uno stato di riposo. A differenza dei solidi, un fluido non offre resistenza agli sforzi di taglio permanenti e si adatta alla forma del recipiente che lo contiene.
-                    </p>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        La <strong>pressione ($p$)</strong> è definita come il valore medio della forza perpendicolare ($\mathbf{F}_{\perp}$) esercitata dal fluido sulla superficie d'impatto di area ($S$):
-                    </p>
-                    
-                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-cyan-400 text-lg mb-4">
-                        $$p = \frac{F_{\perp}}{S}$$
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 bg-slate-900/40 p-3.5 rounded-xl border border-slate-700/50">
-                        <div>
-                            <span class="font-bold text-white block mb-1">Unità del Sistema Internazionale (SI):</span>
-                            <span>1 Pascal ($\text{Pa}$) = $1 \text{ N/m}^2$</span>
-                        </div>
-                        <div>
-                            <span class="font-bold text-white block mb-1">Unità Pratiche d'Ingegneria:</span>
-                            <span>$1 \text{ bar} = 10^5 \text{ Pa} = 0.1 \text{ MPa}$<br>$1 \text{ atm} = 101325 \text{ Pa} \approx 1.013 \text{ bar}$</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 2. Legge di Stevino -->
-                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-blue-500/10 rounded-xl text-blue-400">
-                            <i data-lucide="layers" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">2. Legge di Stevino</h2>
-                    </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        La <strong>legge di Stevino</strong> afferma che la pressione all'interno di un liquido incompresibile aumenta in modo direttamente proporzionale alla profondità $h$ a cui ci si trova.
-                    </p>
-                    
-                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-blue-400 text-lg mb-4">
-                        $$p(h) = p_0 + \rho \cdot g \cdot h$$
-                    </div>
-
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2 bg-slate-900/40 p-4 rounded-xl border border-slate-700/50">
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-400 font-bold">•</span>
-                            <span><strong>$p_0$:</strong> Pressione atmosferica agente sulla superficie libera ($101325 \text{ Pa}$).</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-400 font-bold">•</span>
-                            <span><strong>$\rho$:</strong> Densità del fluido ($\text{kg/m}^3$).</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-400 font-bold">•</span>
-                            <span><strong>$g$:</strong> Accelerazione di gravità locale ($9.81 \text{ m/s}^2$).</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-blue-400 font-bold">•</span>
-                            <span><strong>$h$:</strong> Affondamento o profondità sotto il pelo libero ($\text{m}$).</span>
-                        </li>
-                    </ul>
-
-                    <div class="mt-4 p-3 bg-blue-950/40 border border-blue-800/50 rounded-xl text-xs text-blue-200">
-                        <strong>Paradosso Idrostatico:</strong> La pressione sul fondo di un recipiente dipende unicamente dall'altezza della colonna di fluido $h$ e dalla sua densità, non dalla forma del contenitore o dal volume totale di liquido.
-                    </div>
-                </section>
-
-                <!-- 3. Principio di Pascal -->
-                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-400">
-                            <i data-lucide="git-merge" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">3. Principio di Pascal e Torchio Idraulico</h2>
-                    </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Il <strong>principio di Pascal</strong> stabilisce che una variazione di pressione applicata a un fluido incompresibile contenuto in un recipiente chiuso si trasmette inalterata a ogni punto del fluido e alle pareti del contenitore.
-                    </p>
-                    
-                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-emerald-400 text-lg mb-4">
-                        $$\frac{F_1}{S_1} = \frac{F_2}{S_2} \implies F_2 = F_1 \cdot \frac{S_2}{S_1}$$
-                    </div>
-
-                    <p class="text-xs text-slate-300 leading-relaxed mb-2">
-                        Grazie a questa legge, con un <strong>torchio idraulico</strong> è possibile sollevare carichi elevati ($F_2$) applicando una forza modesta ($F_1$), semplicemente realizzando un pistone con superficie $S_2$ molto maggiore di $S_1$.
-                    </p>
-                </section>
-
-                <!-- 4. Spinta di Archimede -->
-                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-amber-500/10 rounded-xl text-amber-400">
-                            <i data-lucide="anchor" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">4. Principio di Archimede e Galleggiamento</h2>
-                    </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
-                        Un corpo totalmente o parzialmente immerso in un fluido riceve una spinta idrostatica diretta verticalmente verso l'alto ($S_A$) di modulo pari al peso del fluido spostato:
-                    </p>
-                    
-                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-amber-400 text-lg mb-4">
-                        $$S_A = \rho_{\text{fluido}} \cdot V_{\text{imm}} \cdot g$$
-                    </div>
-
-                    <!-- Condizioni di Galleggiamento -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-center mt-4">
-                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
-                            <span class="text-amber-400 font-bold block mb-1">Affonda</span>
-                            <span class="text-slate-300">$\rho_{\text{corpo}} > \rho_{\text{fluido}}$<br>Peso > $S_A$</span>
-                        </div>
-                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
-                            <span class="text-emerald-400 font-bold block mb-1">In Equilibrio</span>
-                            <span class="text-slate-300">$\rho_{\text{corpo}} = \rho_{\text{fluido}}$<br>Peso = $S_A$</span>
-                        </div>
-                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
-                            <span class="text-cyan-400 font-bold block mb-1">Galleggia</span>
-                            <span class="text-slate-300">$\rho_{\text{corpo}} < \rho_{\text{fluido}}$<br>Peso < $S_A \text{ (totale)}$</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 5. Esercizio svolto -->
-                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-purple-500/10 rounded-xl text-purple-400">
-                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-xl font-bold text-white">5. Esercizio Guidato</h2>
-                    </div>
-
-                    <p class="text-xs sm:text-sm text-slate-300 font-medium mb-3">
-                        <strong>Problema:</strong> Calcolare la pressione totale esercitata sul fondo di una piscina a una profondità di $h = 3 \text{ m}$, sapendo che la densità dell'acqua è $\rho = 1000 \text{ kg/m}^3$ e la pressione atmosferica vale $p_0 = 101325 \text{ Pa}$.
-                    </p>
-
-                    <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4 text-xs sm:text-sm space-y-2 font-mono text-slate-300">
-                        <p class="text-purple-300">// 1. Applicazione della Legge di Stevino</p>
-                        <p>$p = p_0 + (\rho \cdot g \cdot h)$</p>
-                        <p>$p = 101325 + (1000 \cdot 9.81 \cdot 3)$</p>
-                        <p>$p = 101325 + 29430 = 130755 \text{ Pa}$</p>
-                        <p class="text-emerald-400 font-bold pt-1">// Risultato: p ≈ 130.76 kPa (ovvero 1.307 bar)</p>
-                    </div>
-                </section>
-
+        <!-- 1. INTRODUZIONE -->
+        <section class="bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg">
+            <h2 class="text-2xl font-bold text-cyan-300 flex items-center gap-2">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+                1. Introduzione all'Idrostatica
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+                L'<strong>idrostatica</strong> è il settore della fisica e della meccanica che si occupa dello studio dei fluidi (liquidi e gas) in condizioni di riposo o di equilibrio statico. In particolare, si concentra sull'analisi del comportamento dei fluidi sotto l'azione della forza di gravità e delle forze dovute alla pressione esercitata dai fluidi stessi.
+            </p>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50 space-y-2">
+                <h3 class="font-semibold text-white">Proprietà Fondamentali in Quiete:</h3>
+                <ul class="list-disc list-inside text-slate-300 text-sm space-y-1">
+                    <li>La pressione in un punto di un fluido in quiete è la stessa in tutte le direzioni (isotropia della pressione).</li>
+                    <li>La forza di pressione esercitata da un fluido su una superficie è sempre perpendicolare alla superficie stessa.</li>
+                </ul>
             </div>
+        </section>
 
-            <!-- Sidebar Destra (Formulario & Tabelle) -->
-            <div class="space-y-6">
-                
-                <!-- Formulario -->
-                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-lg sticky top-20">
-                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
-                        <i data-lucide="book-open" class="w-5 h-5 text-cyan-400"></i>
-                        Formulario Essenziale
-                    </h3>
+        <!-- 2. LEGGE DI STEVIN -->
+        <section class="bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 sm:p-8 space-y-6 shadow-lg">
+            <h2 class="text-2xl font-bold text-cyan-300 flex items-center gap-2">
+                <i data-lucide="layers" class="w-6 h-6"></i>
+                2. Legge di Stevin
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+                La <strong>Legge di Stevin</strong> stabilisce che la pressione esercitata dal peso di un liquido è direttamente proporzionale alla densità del liquido (\(\rho\)), all'accelerazione di gravità (\(g\)) e alla profondità (\(h\)).
+            </p>
 
-                    <div class="space-y-3 font-mono text-xs">
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
-                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Pressione Generale</span>
-                            <span class="text-cyan-300 font-bold text-sm">p = F / S</span>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
-                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Legge di Stevino</span>
-                            <span class="text-blue-300 font-bold text-sm">p = p₀ + ρ·g·h</span>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
-                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Torchio Idraulico</span>
-                            <span class="text-emerald-300 font-bold text-sm">F₂ = F₁ · (S₂ / S₁)</span>
-                        </div>
-
-                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
-                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Spinta Archimede</span>
-                            <span class="text-amber-300 font-bold text-sm">Sₐ = ρ · V · g</span>
-                        </div>
-                    </div>
-
-                    <!-- Tabella Densità Principali Fluidi -->
-                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mt-6 mb-3">
-                        Densità Fluida Tipica ($\text{kg/m}^3$)
-                    </h4>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs border-collapse">
-                            <thead>
-                                <tr class="border-b border-slate-700 text-slate-400">
-                                    <th class="py-1.5 font-semibold">Fluido</th>
-                                    <th class="py-1.5 font-semibold text-right">$\rho$</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-800 text-slate-300">
-                                <tr>
-                                    <td class="py-1.5">Aria (a 0 °C)</td>
-                                    <td class="py-1.5 text-right font-mono">1.29</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-1.5">Olio Minerale</td>
-                                    <td class="py-1.5 text-right font-mono">800 - 900</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-1.5">Acqua Dolce</td>
-                                    <td class="py-1.5 text-right font-mono">1000</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-1.5">Acqua di Mare</td>
-                                    <td class="py-1.5 text-right font-mono">1025</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-1.5">Mercurio ($\text{Hg}$)</td>
-                                    <td class="py-1.5 text-right font-mono">13570</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-700/50">
+                    <h3 class="text-xs uppercase font-bold text-cyan-400 tracking-wider mb-2">Pressione Relativa (Idrostatica)</h3>
+                    <p class="text-xl text-white font-mono mb-2">\[ p_{rel} = \rho \cdot g \cdot h \]</p>
+                    <p class="text-xs text-slate-400">Riguarda unicamente il contributo del peso del fluido alla profondità \(h\).</p>
                 </div>
 
+                <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-700/50">
+                    <h3 class="text-xs uppercase font-bold text-cyan-400 tracking-wider mb-2">Pressione Assoluta</h3>
+                    <p class="text-xl text-white font-mono mb-2">\[ p_{ass} = p_0 + \rho \cdot g \cdot h \]</p>
+                    <p class="text-xs text-slate-400">\(p_0\) è la pressione esterna agibile sulla superficie (spesso la pressione atmosferica \(p_{atm} \approx 101325\text{ Pa}\)).</p>
+                </div>
             </div>
 
-        </div>
+            <!-- Tabella Densità dei Liquidi -->
+            <div class="space-y-3">
+                <h3 class="font-bold text-white">Densità (\(\rho\)) di Liquidi Comuni (a T standard)</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-slate-300 border border-slate-700 rounded-xl overflow-hidden">
+                        <thead class="bg-slate-900 text-cyan-300 uppercase text-xs">
+                            <tr>
+                                <th class="p-3 border-b border-slate-700">Liquido</th>
+                                <th class="p-3 border-b border-slate-700">Temperatura (°C)</th>
+                                <th class="p-3 border-b border-slate-700">Densità \(\rho\) (kg/m³)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-700/50 bg-slate-900/40">
+                            <tr><td class="p-3">Acqua distillata</td><td class="p-3">4</td><td class="p-3 font-mono font-semibold text-white">1000</td></tr>
+                            <tr><td class="p-3">Acqua marina</td><td class="p-3">15</td><td class="p-3 font-mono font-semibold text-white">1025</td></tr>
+                            <tr><td class="p-3">Alcol etilico</td><td class="p-3">15</td><td class="p-3 font-mono font-semibold text-white">794</td></tr>
+                            <tr><td class="p-3">Benzina</td><td class="p-3">15</td><td class="p-3 font-mono font-semibold text-white">720</td></tr>
+                            <tr><td class="p-3">Gasolio</td><td class="p-3">15</td><td class="p-3 font-mono font-semibold text-white">835</td></tr>
+                            <tr><td class="p-3">Mercurio</td><td class="p-3">0</td><td class="p-3 font-mono font-semibold text-white">13596</td></tr>
+                            <tr><td class="p-3">Petrolio</td><td class="p-3">15</td><td class="p-3 font-mono font-semibold text-white">800</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Vasi Comunicanti -->
+            <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-700/50 space-y-2">
+                <h3 class="font-semibold text-cyan-300">Vasi Comunicanti & Piezometria</h3>
+                <p class="text-sm text-slate-300">
+                    Se due recipienti comunicanti contengono lo stesso liquido, il livello raggiunto dal fluido è identico indipendentemente dalla forma dei recipienti. Se vi sono due liquidi non miscibili di densità \(\rho_1\) e \(\rho_2\), le altezze delle colonne si collegano con la relazione:
+                </p>
+                <p class="text-center font-mono text-cyan-400 py-1">\[ \rho_1 \cdot h_1 = \rho_2 \cdot h_2 \]</p>
+                <p class="text-xs text-slate-400">
+                    L'<strong>altezza piezometrica</strong> rappresenta la pressione misurata in metri di colonna d'acqua (\(\text{mca}\)). Tutti i punti di un fluido in quiete posti alla stessa quota piezometrica hanno la stessa pressione.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. PRINCIPIO DI PASCAL -->
+        <section class="bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg">
+            <h2 class="text-2xl font-bold text-cyan-300 flex items-center gap-2">
+                <i data-lucide="maximize" class="w-6 h-6"></i>
+                3. Principio di Pascal e Torchio Idraulico
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+                La pressione esercitata su una superficie qualsiasi di un fluido incompressibile racchiuso in un recipiente si trasmette inalterata a ogni altro punto del fluido e alle pareti del contenitore.
+            </p>
+            <div class="bg-slate-900/80 p-5 rounded-xl border border-slate-700/50 space-y-3">
+                <h3 class="font-bold text-white">Applicazione: Torchio Idraulico</h3>
+                <p class="text-sm text-slate-300">
+                    Uguagliando la pressione sui due pistoni di superficie \(S_1\) e \(S_2\):
+                </p>
+                <p class="text-center font-mono text-cyan-400 text-lg">\[ p = \frac{F_1}{S_1} = \frac{F_2}{S_2} \implies F_1 = F_2 \cdot \frac{S_1}{S_2} \]</p>
+                <p class="text-xs text-slate-400">
+                    Applicando una piccola forza \(F_1\) su una superficie ridotta \(S_1\), è possibile sollevare un gran peso \(F_2\) sulla superficie maggiore \(S_2\).
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. PRINCIPIO DI ARCHIMEDE -->
+        <section class="bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg">
+            <h2 class="text-2xl font-bold text-cyan-300 flex items-center gap-2">
+                <i data-lucide="anchor" class="w-6 h-6"></i>
+                4. Principio di Archimede e Galleggiamento
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+                Un corpo immerso (totalmente o parzialmente) in un fluido riceve una spinta verticale verso l'alto (\(F_A\)) di intensità pari al peso del volume di fluido spostato dal corpo:
+            </p>
+            <p class="text-center font-mono text-cyan-400 text-xl py-2">\[ F_A = \rho_{fluido} \cdot V_{immerso} \cdot g \]</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <h4 class="font-bold text-emerald-400 mb-1">Galleggia</h4>
+                    <p class="text-xs text-slate-300">\(\rho_{corpo} < \rho_{fluido}\)</p>
+                    <p class="text-xs text-slate-400 mt-1">La spinta di Archimede bilancia il peso prima dell'immersione totale.</p>
+                </div>
+                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <h4 class="font-bold text-amber-400 mb-1">In Equilibrio</h4>
+                    <p class="text-xs text-slate-300">\(\rho_{corpo} = \rho_{fluido}\)</p>
+                    <p class="text-xs text-slate-400 mt-1">Il corpo rimane sospeso a qualsiasi profondità.</p>
+                </div>
+                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                    <h4 class="font-bold text-rose-400 mb-1">Affonda</h4>
+                    <p class="text-xs text-slate-300">\(\rho_{corpo} > \rho_{fluido}\)</p>
+                    <p class="text-xs text-slate-400 mt-1">La forza peso supera la spinta di Archimede massima.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. VISCOSITÀ -->
+        <section class="bg-slate-800/60 border border-slate-700/70 rounded-2xl p-6 sm:p-8 space-y-4 shadow-lg">
+            <h2 class="text-2xl font-bold text-cyan-300 flex items-center gap-2">
+                <i data-lucide="droplet" class="w-6 h-6"></i>
+                5. Viscosità dei Fluidi
+            </h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+                La <strong>viscosità dinamica</strong> (\(\mu\)) e la <strong>viscosità cinematica</strong> (\(\nu = \mu / \rho\)) misurano la resistenza di un fluido allo scorrimento interno.
+            </p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300 border border-slate-700 rounded-xl overflow-hidden">
+                    <thead class="bg-slate-900 text-cyan-300 uppercase">
+                        <tr>
+                            <th class="p-2.5 border-b border-slate-700">Fluido</th>
+                            <th class="p-2.5 border-b border-slate-700">\(\mu\) [kg/(m·s)]</th>
+                            <th class="p-2.5 border-b border-slate-700">\(\rho\) [kg/m³]</th>
+                            <th class="p-2.5 border-b border-slate-700">\(\nu\) [m²/s]</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-700/50 bg-slate-900/40 font-mono">
+                        <tr><td class="p-2.5 font-sans">Aria</td><td class="p-2.5">1,8·10⁻⁵</td><td class="p-2.5">1,2</td><td class="p-2.5">1,51·10⁻⁵</td></tr>
+                        <tr><td class="p-2.5 font-sans">Benzina</td><td class="p-2.5">2,9·10⁻⁴</td><td class="p-2.5">720</td><td class="p-2.5">4,03·10⁻⁷</td></tr>
+                        <tr><td class="p-2.5 font-sans">Acqua</td><td class="p-2.5">1,0·10⁻³</td><td class="p-2.5">1000</td><td class="p-2.5">1,01·10⁻⁶</td></tr>
+                        <tr><td class="p-2.5 font-sans">Alcol etilico</td><td class="p-2.5">1,2·10⁻³</td><td class="p-2.5">789</td><td class="p-2.5">1,51·10⁻⁶</td></tr>
+                        <tr><td class="p-2.5 font-sans">Mercurio</td><td class="p-2.5">1,5·10⁻³</td><td class="p-2.5">13540</td><td class="p-2.5">1,16·10⁻⁷</td></tr>
+                        <tr><td class="p-2.5 font-sans">Olio motori</td><td class="p-2.5">0,26</td><td class="p-2.5">930</td><td class="p-2.5">2,79·10⁻⁴</td></tr>
+                        <tr><td class="p-2.5 font-sans">Glicerina</td><td class="p-2.5">1,5</td><td class="p-2.5">1263</td><td class="p-2.5">1,19·10⁻³</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 6. ESERCIZI SVOLTI -->
+        <section class="space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="calculator" class="w-6 h-6 text-cyan-400"></i>
+                    6. Esercizi Svolti di Idrostatica
+                </h2>
+                <p class="text-slate-400 text-sm">Tutti i 10 esercizi ufficiali risolti e commentati passo dopo passo.</p>
+            </div>
+
+            <!-- Esercizio 1 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 1 — Pressione sul fondo di due contenitori</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Stevin</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Due contenitori hanno lo stesso volume di \(10\text{ l}\). Il primo ha un'altezza \(h_1 = 50\text{ cm}\), il secondo un'altezza \(h_2 = 20\text{ cm}\). Calcola la pressione dovuta alla forza peso dell'acqua (\(\rho = 1000\text{ kg/m}^3\)) sul fondo di ciascuno.
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p><strong class="text-cyan-400 font-sans">Svolgimento:</strong> La pressione idrostatica sul fondo dipende solo dall'altezza \(h\) e non dal volume o dalla forma.</p>
+                    <p>\[ p_1 = \rho \cdot g \cdot h_1 = 1000 \cdot 9,81 \cdot 0,50 = 4905\text{ Pa} = 4,905\text{ kPa} \]</p>
+                    <p>\[ p_2 = \rho \cdot g \cdot h_2 = 1000 \cdot 9,81 \cdot 0,20 = 1962\text{ Pa} = 1,962\text{ kPa} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 4,905 kPa | 1,962 kPa ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 2 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 2 — Vasche Comunicanti con due liquidi</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Vasi Comunicanti</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Due liquidi sono versati in due vasche comunicanti. La colonna del primo liquido è alta \(h_1 = 50\text{ cm}\). Le densità sono \(\rho_1 = 1800\text{ kg/m}^3\) e \(\rho_2 = 2200\text{ kg/m}^3\). Quanto è alta la colonna del secondo liquido?
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p><strong class="text-cyan-400 font-sans">Svolgimento:</strong> Uguagliando le pressioni idrostatiche alla linea di separazione: \(\rho_1 \cdot h_1 = \rho_2 \cdot h_2\)</p>
+                    <p>\[ h_2 = \frac{\rho_1 \cdot h_1}{\rho_2} = \frac{1800 \cdot 50}{2200} = 40.9 \approx 40\text{ cm} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 40 cm ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 3 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 3 — Densità del liquido incognito</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Vasi Comunicanti</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Una colonna d'acqua di \(h_1 = 60\text{ cm}\) (\(\rho_1 = 1000\text{ kg/m}^3\)) sostiene una colonna di un liquido alta \(h_2 = 40\text{ cm}\). Qual è la densità del liquido incognito?
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>\[ \rho_2 = \frac{\rho_1 \cdot h_1}{h_2} = \frac{1000 \cdot 0,60}{0,40} = 1500\text{ kg/m}^3 \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 1500 kg/m³ ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 4 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 4 — Pressione Assoluta in una Cisterna</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Stevin Assoluta</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Un manometro sul fondo di una cisterna d'acqua (\(\rho = 1000\text{ kg/m}^3\)) rileva una pressione assoluta di \(p_{ass} = 1,4 \cdot 10^5\text{ Pa}\). Calcola l'altezza \(h\) del liquido considerando \(p_{atm} = 101325\text{ Pa}\).
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>\[ p_{ass} = p_{atm} + \rho \cdot g \cdot h \implies h = \frac{p_{ass} - p_{atm}}{\rho \cdot g} \]</p>
+                    <p>\[ h = \frac{140000 - 101325}{1000 \cdot 9,81} = \frac{38675}{9810} \approx 3,94\text{ m} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 3,94 m ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 5 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 5 — Bidone con Tubo Piezometrico</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Piezometria</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Un bidone pieno d'acqua ha un manometro sul fondo che segnala una pressione idrostatica di \(7,8\text{ kPa}\). Da un foro al centro del coperchio si alza un tubo lungo \(1\text{ m}\). Quanto vale l'altezza del contenitore? Qual è la pressione sul fondo quando anche il tubo si riempie d'acqua?
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>1. Altezza contenitore \(h_1\): \[ h_1 = \frac{p_1}{\rho \cdot g} = \frac{7800}{1000 \cdot 9,81} \approx 0,8\text{ m} \]</p>
+                    <p>2. Altezza totale con tubo pieno \(h_{tot} = 0,8 + 1,0 = 1,8\text{ m}\):</p>
+                    <p>\[ p_{tot} = \rho \cdot g \cdot h_{tot} = 1000 \cdot 9,81 \cdot 1,8 = 17658\text{ Pa} \approx 17,65\text{ kPa} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 0,8 m | 17,65 kPa ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 6 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 6 — Torchio Idraulico</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Pascal</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Determinare la forza \(F_1\) necessaria a sollevare una forza peso di \(F_2 = 9500\text{ N}\) tramite un torchio idraulico, sapendo che il pistone minore ha diametro \(d_1 = 60\text{ mm}\) e quello maggiore \(d_2 = 180\text{ mm}\).
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>Il rapporto tra le superfici è pari al rapporto tra i quadrati dei diametri:</p>
+                    <p>\[ \frac{S_1}{S_2} = \left(\frac{d_1}{d_2}\right)^2 = \left(\frac{60}{180}\right)^2 = \left(\frac{1}{3}\right)^2 = \frac{1}{9} \]</p>
+                    <p>\[ F_1 = F_2 \cdot \frac{S_1}{S_2} = \frac{9500}{9} \approx 1055,6\text{ N} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 1055,6 N ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 7 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 7 — Spinta sul Fondo e Pareti di una Cisterna</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Spinta Idrostatica</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Una cisterna a base quadrata di lato \(L = 2\text{ m}\) contiene acqua fino a un'altezza \(h = 5\text{ m}\). Calcola la spinta sul fondo (\(F_f\)) e sulle pareti laterali (\(F_l\)).
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>1. Spinta sul fondo \(F_f = p_{fondo} \cdot A_{base} = (\rho g h) \cdot (L^2)\):</p>
+                    <p>\[ F_f = (1000 \cdot 9,81 \cdot 5) \cdot 4 = 196200\text{ N} = 196,2\text{ kN} \]</p>
+                    <p>2. Spinta sulle pareti laterali (4 pareti) con pressione media a metà altezza (\(h/2\)):</p>
+                    <p>\[ F_l = 4 \cdot \left(\rho g \frac{h}{2}\right) \cdot (L \cdot h) = 4 \cdot (1000 \cdot 9,81 \cdot 2,5) \cdot 10 = 245250\text{ N} = 245,25\text{ kN} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ Fl = 245,25 kN | Ff = 196,2 kN ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 8 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 8 — Spinta di Archimede su un Cubo Parzialmente Immerso</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Archimede</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Un cubo di lato \(L = 1\text{ m}\) è immerso in acqua per un quarto della sua altezza (\(h_{imm} = 0,25\text{ m}\)). Calcola la spinta dal basso verso l'alto ricevuta.
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>Volume immerso \(V_{imm} = L^2 \cdot h_{imm} = 1^2 \cdot 0,25 = 0,25\text{ m}^3\)</p>
+                    <p>\[ F_A = \rho \cdot V_{imm} \cdot g = 1000 \cdot 0,25 \cdot 9,81 = 2452,5\text{ N} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 2452,5 N ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 9 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 9 — Manometro a U per Gasolio</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Manometria</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Un manometro a U a mercurio (\(\rho_m = 13600\text{ kg/m}^3\)) misura la pressione di un gasolio (\(\rho_g = 835\text{ kg/m}^3\)). Con altezze \(h_1 = 0,4\text{ m}\) e \(h_2 = 0,8\text{ m}\), calcola la pressione relativa del gasolio.
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>\[ p_{rel} = \rho_m \cdot g \cdot h_2 - \rho_g \cdot g \cdot h_1 \]</p>
+                    <p>\[ p_{rel} = (13600 \cdot 9,81 \cdot 0,8) - (835 \cdot 9,81 \cdot 0,4) = 106732,8 - 3276,5 = 103456,3\text{ Pa} \approx 103,465\text{ kPa} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ 103,465 kPa ]</p>
+                </div>
+            </div>
+
+            <!-- Esercizio 10 -->
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-cyan-300">Esercizio 10 — Manometro a U per Benzina (Pressione Negativa)</h3>
+                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Manometria</span>
+                </div>
+                <p class="text-sm text-slate-300">
+                    Un manometro a U misura la pressione relativa di un serbatoio di benzina (\(\rho_b = 720\text{ kg/m}^3\)). Il liquido manometrico è mercurio (\(\rho_m = 13600\text{ kg/m}^3\)). Si misurano \(h_1 = 0,1\text{ m}\) e \(h_2 = -0,15\text{ m}\). Qual è la pressione relativa?
+                </p>
+                <div class="bg-slate-900/90 p-4 rounded-xl text-xs space-y-2 border border-slate-700/50 font-mono text-slate-300">
+                    <p>\[ p_{rel} = \rho_m \cdot g \cdot h_2 - \rho_b \cdot g \cdot h_1 \]</p>
+                    <p>\[ p_{rel} = (13600 \cdot 9,81 \cdot (-0,15)) - (720 \cdot 9,81 \cdot 0,1) = -20012,4 - 706,32 = -20718,7\text{ Pa} \approx -20,718\text{ kPa} \]</p>
+                    <p class="text-emerald-400 font-bold font-sans">Risultato: [ -20,718 kPa ]</p>
+                </div>
+            </div>
+
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-12">
+    <footer class="bg-slate-950 border-t border-slate-800 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
-            <p>© Portale Scolastico — Materiale didattico per studenti.</p>
+            <p>© Portale Scolastico — Materiale Didattico integrato di Idrostatica.</p>
         </div>
     </footer>
 
-    <!-- Script Lucide Icons -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
