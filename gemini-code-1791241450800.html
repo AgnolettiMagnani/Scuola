@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idrostatica - Portale Scolastico</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- MathJax per formule matematiche -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.com/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="p-2 bg-blue-600 rounded-lg">
+                        <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-bold text-base sm:text-lg tracking-tight text-white">
+                        Scuola <span class="text-blue-500">Tecnica</span>
+                    </span>
+                </a>
+
+                <!-- Torna alla Home -->
+                <a href="index.html" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition flex items-center gap-2 shadow">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Torna alla Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        
+        <!-- Intestazione Pagina -->
+        <div class="mb-10">
+            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 uppercase tracking-wider mb-2">
+                <span>Meccanica & Macchine</span>
+                <span>•</span>
+                <span>Fluidodinamica Statico-Differenziale</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+                Idrostatica
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-3xl">
+                Studio dell'equilibrio dei fluidi in quiete, analisi delle pressioni esercitate e principi fisici fondamentali per l'ingegneria meccanica e idraulica.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Colonna Principale (Contenuto Didattico) -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- 1. Pressione e Densità -->
+                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-cyan-500/10 rounded-xl text-cyan-400">
+                            <i data-lucide="gauge" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">1. Pressione Idrostatica e Densità</h2>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        L'<strong>idrostatica</strong> si occupa dello studio dei fluidi (liquidi e gas) quando si trovano in uno stato di riposo. A differenza dei solidi, un fluido non offre resistenza agli sforzi di taglio permanenti e si adatta alla forma del recipiente che lo contiene.
+                    </p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        La <strong>pressione ($p$)</strong> è definita come il valore medio della forza perpendicolare ($\mathbf{F}_{\perp}$) esercitata dal fluido sulla superficie d'impatto di area ($S$):
+                    </p>
+                    
+                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-cyan-400 text-lg mb-4">
+                        $$p = \frac{F_{\perp}}{S}$$
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 bg-slate-900/40 p-3.5 rounded-xl border border-slate-700/50">
+                        <div>
+                            <span class="font-bold text-white block mb-1">Unità del Sistema Internazionale (SI):</span>
+                            <span>1 Pascal ($\text{Pa}$) = $1 \text{ N/m}^2$</span>
+                        </div>
+                        <div>
+                            <span class="font-bold text-white block mb-1">Unità Pratiche d'Ingegneria:</span>
+                            <span>$1 \text{ bar} = 10^5 \text{ Pa} = 0.1 \text{ MPa}$<br>$1 \text{ atm} = 101325 \text{ Pa} \approx 1.013 \text{ bar}$</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Legge di Stevino -->
+                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-blue-500/10 rounded-xl text-blue-400">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">2. Legge di Stevino</h2>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        La <strong>legge di Stevino</strong> afferma che la pressione all'interno di un liquido incompresibile aumenta in modo direttamente proporzionale alla profondità $h$ a cui ci si trova.
+                    </p>
+                    
+                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-blue-400 text-lg mb-4">
+                        $$p(h) = p_0 + \rho \cdot g \cdot h$$
+                    </div>
+
+                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2 bg-slate-900/40 p-4 rounded-xl border border-slate-700/50">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 font-bold">•</span>
+                            <span><strong>$p_0$:</strong> Pressione atmosferica agente sulla superficie libera ($101325 \text{ Pa}$).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 font-bold">•</span>
+                            <span><strong>$\rho$:</strong> Densità del fluido ($\text{kg/m}^3$).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 font-bold">•</span>
+                            <span><strong>$g$:</strong> Accelerazione di gravità locale ($9.81 \text{ m/s}^2$).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-400 font-bold">•</span>
+                            <span><strong>$h$:</strong> Affondamento o profondità sotto il pelo libero ($\text{m}$).</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-4 p-3 bg-blue-950/40 border border-blue-800/50 rounded-xl text-xs text-blue-200">
+                        <strong>Paradosso Idrostatico:</strong> La pressione sul fondo di un recipiente dipende unicamente dall'altezza della colonna di fluido $h$ e dalla sua densità, non dalla forma del contenitore o dal volume totale di liquido.
+                    </div>
+                </section>
+
+                <!-- 3. Principio di Pascal -->
+                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-emerald-500/10 rounded-xl text-emerald-400">
+                            <i data-lucide="git-merge" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">3. Principio di Pascal e Torchio Idraulico</h2>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Il <strong>principio di Pascal</strong> stabilisce che una variazione di pressione applicata a un fluido incompresibile contenuto in un recipiente chiuso si trasmette inalterata a ogni punto del fluido e alle pareti del contenitore.
+                    </p>
+                    
+                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-emerald-400 text-lg mb-4">
+                        $$\frac{F_1}{S_1} = \frac{F_2}{S_2} \implies F_2 = F_1 \cdot \frac{S_2}{S_1}$$
+                    </div>
+
+                    <p class="text-xs text-slate-300 leading-relaxed mb-2">
+                        Grazie a questa legge, con un <strong>torchio idraulico</strong> è possibile sollevare carichi elevati ($F_2$) applicando una forza modesta ($F_1$), semplicemente realizzando un pistone con superficie $S_2$ molto maggiore di $S_1$.
+                    </p>
+                </section>
+
+                <!-- 4. Spinta di Archimede -->
+                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-amber-500/10 rounded-xl text-amber-400">
+                            <i data-lucide="anchor" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">4. Principio di Archimede e Galleggiamento</h2>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Un corpo totalmente o parzialmente immerso in un fluido riceve una spinta idrostatica diretta verticalmente verso l'alto ($S_A$) di modulo pari al peso del fluido spostato:
+                    </p>
+                    
+                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-center font-mono text-amber-400 text-lg mb-4">
+                        $$S_A = \rho_{\text{fluido}} \cdot V_{\text{imm}} \cdot g$$
+                    </div>
+
+                    <!-- Condizioni di Galleggiamento -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-center mt-4">
+                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
+                            <span class="text-amber-400 font-bold block mb-1">Affonda</span>
+                            <span class="text-slate-300">$\rho_{\text{corpo}} > \rho_{\text{fluido}}$<br>Peso > $S_A$</span>
+                        </div>
+                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
+                            <span class="text-emerald-400 font-bold block mb-1">In Equilibrio</span>
+                            <span class="text-slate-300">$\rho_{\text{corpo}} = \rho_{\text{fluido}}$<br>Peso = $S_A$</span>
+                        </div>
+                        <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700">
+                            <span class="text-cyan-400 font-bold block mb-1">Galleggia</span>
+                            <span class="text-slate-300">$\rho_{\text{corpo}} < \rho_{\text{fluido}}$<br>Peso < $S_A \text{ (totale)}$</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Esercizio svolto -->
+                <section class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-purple-500/10 rounded-xl text-purple-400">
+                            <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">5. Esercizio Guidato</h2>
+                    </div>
+
+                    <p class="text-xs sm:text-sm text-slate-300 font-medium mb-3">
+                        <strong>Problema:</strong> Calcolare la pressione totale esercitata sul fondo di una piscina a una profondità di $h = 3 \text{ m}$, sapendo che la densità dell'acqua è $\rho = 1000 \text{ kg/m}^3$ e la pressione atmosferica vale $p_0 = 101325 \text{ Pa}$.
+                    </p>
+
+                    <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4 text-xs sm:text-sm space-y-2 font-mono text-slate-300">
+                        <p class="text-purple-300">// 1. Applicazione della Legge di Stevino</p>
+                        <p>$p = p_0 + (\rho \cdot g \cdot h)$</p>
+                        <p>$p = 101325 + (1000 \cdot 9.81 \cdot 3)$</p>
+                        <p>$p = 101325 + 29430 = 130755 \text{ Pa}$</p>
+                        <p class="text-emerald-400 font-bold pt-1">// Risultato: p ≈ 130.76 kPa (ovvero 1.307 bar)</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar Destra (Formulario & Tabelle) -->
+            <div class="space-y-6">
+                
+                <!-- Formulario -->
+                <div class="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-5 shadow-lg sticky top-20">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2 border-b border-slate-700 pb-3">
+                        <i data-lucide="book-open" class="w-5 h-5 text-cyan-400"></i>
+                        Formulario Essenziale
+                    </h3>
+
+                    <div class="space-y-3 font-mono text-xs">
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Pressione Generale</span>
+                            <span class="text-cyan-300 font-bold text-sm">p = F / S</span>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Legge di Stevino</span>
+                            <span class="text-blue-300 font-bold text-sm">p = p₀ + ρ·g·h</span>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Torchio Idraulico</span>
+                            <span class="text-emerald-300 font-bold text-sm">F₂ = F₁ · (S₂ / S₁)</span>
+                        </div>
+
+                        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-700">
+                            <span class="text-slate-400 block text-[10px] uppercase font-sans mb-1">Spinta Archimede</span>
+                            <span class="text-amber-300 font-bold text-sm">Sₐ = ρ · V · g</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabella Densità Principali Fluidi -->
+                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider mt-6 mb-3">
+                        Densità Fluida Tipica ($\text{kg/m}^3$)
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs border-collapse">
+                            <thead>
+                                <tr class="border-b border-slate-700 text-slate-400">
+                                    <th class="py-1.5 font-semibold">Fluido</th>
+                                    <th class="py-1.5 font-semibold text-right">$\rho$</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800 text-slate-300">
+                                <tr>
+                                    <td class="py-1.5">Aria (a 0 °C)</td>
+                                    <td class="py-1.5 text-right font-mono">1.29</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1.5">Olio Minerale</td>
+                                    <td class="py-1.5 text-right font-mono">800 - 900</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1.5">Acqua Dolce</td>
+                                    <td class="py-1.5 text-right font-mono">1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1.5">Acqua di Mare</td>
+                                    <td class="py-1.5 text-right font-mono">1025</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1.5">Mercurio ($\text{Hg}$)</td>
+                                    <td class="py-1.5 text-right font-mono">13570</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© Portale Scolastico — Materiale didattico per studenti.</p>
+        </div>
+    </footer>
+
+    <!-- Script Lucide Icons -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
