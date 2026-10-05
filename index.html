@@ -9,40 +9,50 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased">
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
 
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 gap-4">
+            <div class="flex items-center justify-between h-16 gap-2">
                 
-                <!-- Logo & Selettore Indirizzo -->
-                <div class="flex items-center gap-3 sm:gap-6 shrink-0">
-                    <a href="index.html" class="flex items-center gap-2.5">
-                        <div id="logoBg" class="p-2 bg-blue-600 rounded-lg transition-colors">
-                            <i id="logoIcon" data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                <!-- Logo & Switch -->
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <!-- Contenitore Icona Logo: Sostituito via JS -->
+                        <div id="logoBg" class="p-2 bg-blue-600 rounded-lg transition-colors flex items-center justify-center">
+                            <span id="logoIconContainer">
+                                <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                            </span>
                         </div>
-                        <span class="font-bold text-lg tracking-tight text-white hidden md:inline">
+                        <span class="font-bold text-base sm:text-lg tracking-tight text-white">
                             Scuola <span id="logoText" class="text-blue-500">Tecnica</span>
                         </span>
                     </a>
 
-                    <!-- Switch tra Indirizzi -->
+                    <!-- Switch Indirizzo -->
                     <div class="bg-slate-800 p-1 rounded-xl border border-slate-700 flex items-center gap-1">
-                        <button id="btnTecnica" onclick="switchAddress('tecnica')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer">
-                            <i data-lucide="cpu" class="w-3.5 h-3.5 inline mr-1"></i> Tecnica
+                        <button id="btnTecnica" onclick="switchAddress('tecnica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center">
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 mr-1"></i>
+                            <span>Tecnica</span>
                         </button>
-                        <button id="btnUmanistica" onclick="switchAddress('umanistica')" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer">
-                            <i data-lucide="feather" class="w-3.5 h-3.5 inline mr-1"></i> Umanistica
+                        <button id="btnUmanistica" onclick="switchAddress('umanistica')" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center">
+                            <i data-lucide="feather" class="w-3.5 h-3.5 mr-1"></i>
+                            <span>Umanistica</span>
                         </button>
                     </div>
                 </div>
 
-                <!-- UNICO CONTENITORE NAV -->
-                <nav class="flex items-center">
+                <!-- Pulsante Menu Hamburger per Mobile -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- NAV DESKTOP -->
+                <nav class="hidden md:flex items-center">
                     
-                    <!-- MENU TECNICO -->
-                    <div id="navTecnica" class="flex items-center gap-1">
+                    <!-- MENU TECNICO DESKTOP -->
+                    <div id="navTecnicaDesktop" class="flex items-center gap-1">
                         <a href="index.html" class="px-3 py-2 text-sm font-semibold text-blue-400 border-b-2 border-blue-500 whitespace-nowrap">Home Tecnica</a>
                         
                         <div class="relative group py-2">
@@ -75,24 +85,12 @@
                             </div>
                         </div>
 
-                        <div class="relative group py-2">
-                            <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
-                                Igiene <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </button>
-                            <div class="absolute left-0 top-full w-52 hidden group-hover:block z-50 pt-1">
-                                <div class="bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2">
-                                    <a href="igiene/epidemiologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Epidemiologia</a>
-                                    <a href="igiene/microbiologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Microbiologia</a>
-                                </div>
-                            </div>
-                        </div>
-
                         <a href="elettrotecnica/ohm.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white whitespace-nowrap">Elettrotecnica</a>
                         <a href="informatica/programmazione.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white whitespace-nowrap">Informatica</a>
                     </div>
 
-                    <!-- MENU UMANISTICO -->
-                    <div id="navUmanistica" class="flex items-center gap-1" style="display: none !important;">
+                    <!-- MENU UMANISTICO DESKTOP -->
+                    <div id="navUmanisticaDesktop" class="flex items-center gap-1" style="display: none !important;">
                         <a href="index.html" class="px-3 py-2 text-sm font-semibold text-amber-400 border-b-2 border-amber-500 whitespace-nowrap">Home Umanistica</a>
                         
                         <div class="relative group py-2">
@@ -107,17 +105,6 @@
                             </div>
                         </div>
 
-                        <div class="relative group py-2">
-                            <button class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white flex items-center gap-1 whitespace-nowrap">
-                                Storia <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </button>
-                            <div class="absolute left-0 top-full w-52 hidden group-hover:block z-50 pt-1">
-                                <div class="bg-slate-800 rounded-xl shadow-2xl border border-slate-700 py-2">
-                                    <a href="umanistica/storia/novecento.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Il Novecento</a>
-                                </div>
-                            </div>
-                        </div>
-
                         <a href="umanistica/filosofia/kant.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white whitespace-nowrap">Filosofia</a>
                         <a href="umanistica/arte/rinascimento.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white whitespace-nowrap">Arte</a>
                     </div>
@@ -126,16 +113,38 @@
 
             </div>
         </div>
+
+        <!-- MENU MOBILE (Tendina a Scomparsa) -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2">
+            <!-- Voci Tecnica Mobile -->
+            <div id="navTecnicaMobile" class="space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-blue-400 bg-slate-800">Home Tecnica</a>
+                <a href="meccanica/statica.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Meccanica: Statica</a>
+                <a href="meccanica/dinamica.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Meccanica: Dinamica</a>
+                <a href="chimica/organica.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Chimica Organica</a>
+                <a href="elettrotecnica/ohm.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Elettrotecnica</a>
+                <a href="informatica/programmazione.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Informatica</a>
+            </div>
+
+            <!-- Voci Umanistica Mobile -->
+            <div id="navUmanisticaMobile" class="space-y-1" style="display: none !important;">
+                <a href="index.html" class="block px-3 py-2 rounded-lg text-base font-semibold text-amber-400 bg-slate-800">Home Umanistica</a>
+                <a href="umanistica/italiano/dante.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Italiano: Dante</a>
+                <a href="umanistica/storia/novecento.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Storia: Novecento</a>
+                <a href="umanistica/filosofia/kant.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Filosofia</a>
+                <a href="umanistica/arte/rinascimento.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Arte</a>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section class="py-10 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-            <h1 id="heroTitle" class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+        <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+            <h1 id="heroTitle" class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
                 Appunti e Risorse per l'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>
             </h1>
-            <p id="heroSubtitle" class="text-slate-400 text-base sm:text-lg mb-6">
+            <p id="heroSubtitle" class="text-slate-400 text-sm sm:text-lg mb-6">
                 Esplora i moduli dell'Area Tecnica.
             </p>
 
@@ -144,7 +153,7 @@
                     <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
                 </div>
                 <input type="text" id="searchInput" onkeyup="filterTopics()" placeholder="Cerca un argomento..." 
-                       class="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-lg">
+                       class="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm sm:text-base placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-lg">
             </div>
         </section>
 
@@ -237,4 +246,90 @@
                 </div>
 
                 <!-- Card Storia -->
-                <div
+                <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-red-500/50 transition shadow-lg">
+                    <div class="p-3 bg-red-500/10 rounded-xl w-fit text-red-400 mb-4">
+                        <i data-lucide="landmark" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Storia</h3>
+                    <p class="text-slate-400 text-sm mb-4">I principali avvenimenti storici del Novecento e contemporanei.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="umanistica/storia/novecento.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Il Novecento</a>
+                    </div>
+                </div>
+
+                <!-- Card Filosofia -->
+                <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-violet-500/50 transition shadow-lg">
+                    <div class="p-3 bg-violet-500/10 rounded-xl w-fit text-violet-400 mb-4">
+                        <i data-lucide="brain" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Filosofia</h3>
+                    <p class="text-slate-400 text-sm mb-4">I grandi pensatori, da Immanuel Kant ai filosofi del '900.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="umanistica/filosofia/kant.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-violet-600 hover:text-white transition">Kant</a>
+                    </div>
+                </div>
+
+                <!-- Card Arte -->
+                <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-pink-500/50 transition shadow-lg">
+                    <div class="p-3 bg-pink-500/10 rounded-xl w-fit text-pink-400 mb-4">
+                        <i data-lucide="palette" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Storia dell'Arte</h3>
+                    <p class="text-slate-400 text-sm mb-4">Correnti artistiche, dal Rinascimento all'arte moderna.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="umanistica/arte/rinascimento.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-pink-600 hover:text-white transition">Rinascimento</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© Portale Scolastico — Materiale didattico per studenti.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Inizializza le icone
+        lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function switchAddress(mode) {
+            const navTecnicaDesktop = document.getElementById('navTecnicaDesktop');
+            const navUmanisticaDesktop = document.getElementById('navUmanisticaDesktop');
+            const navTecnicaMobile = document.getElementById('navTecnicaMobile');
+            const navUmanisticaMobile = document.getElementById('navUmanisticaMobile');
+
+            const secTecnica = document.getElementById('sectionTecnica');
+            const secUmanistica = document.getElementById('sectionUmanistica');
+
+            const btnTecnica = document.getElementById('btnTecnica');
+            const btnUmanistica = document.getElementById('btnUmanistica');
+            const logoBg = document.getElementById('logoBg');
+            const logoText = document.getElementById('logoText');
+            const logoIconContainer = document.getElementById('logoIconContainer');
+            const heroTitle = document.getElementById('heroTitle');
+            const heroSubtitle = document.getElementById('heroSubtitle');
+
+            if (mode === 'tecnica') {
+                // Desktop Nav
+                navTecnicaDesktop.style.setProperty('display', 'flex', 'important');
+                navUmanisticaDesktop.style.setProperty('display', 'none', 'important');
+                
+                // Mobile Nav
+                navTecnicaMobile.style.setProperty('display', 'block', 'important');
+                navUmanisticaMobile.style.setProperty('display', 'none', 'important');
+
+                // Sezioni
+                secTecnica.style.setProperty('display', 'block', 'important');
+                secUmanistica.style.setProperty('display', 'none', 'important');
+
+                // Bottoni
