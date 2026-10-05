@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- MathJax per Formule Matematiche -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.com/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
 
@@ -51,7 +54,7 @@
                 <nav class="hidden md:flex items-center">
                     <div id="navTecnicaDesktop" class="flex items-center gap-1">
                         <a href="#sectionTecnica" class="px-3 py-2 text-sm font-semibold text-blue-400 hover:text-blue-300">Moduli</a>
-                        <a href="idrostatica.html" class="px-3 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300">Idrostatica</a>
+                        <a href="#idrostatica" class="px-3 py-2 text-sm font-medium text-cyan-400 hover:text-cyan-300">Idrostatica</a>
                         <a href="circuiti.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white">Elettrotecnica</a>
                         <a href="digitale.html" class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white">Informatica</a>
                     </div>
@@ -68,7 +71,7 @@
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2">
             <div id="navTecnicaMobile" class="space-y-1">
                 <a href="#sectionTecnica" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-blue-400 bg-slate-800">Moduli Tecnici</a>
-                <a href="idrostatica.html" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm text-cyan-300 hover:bg-slate-800">Idrostatica</a>
+                <a href="#idrostatica" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-sm text-cyan-300">Idrostatica</a>
             </div>
             <div id="navUmanisticaMobile" class="hidden space-y-1">
                 <a href="#sectionUmanistica" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-amber-400 bg-slate-800">Moduli Umanistici</a>
@@ -85,7 +88,7 @@
                 Appunti e Risorse per l'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>
             </h1>
             <p id="heroSubtitle" class="text-slate-400 text-sm sm:text-lg mb-6">
-                Seleziona una materia o cerca tra gli argomenti disponibili.
+                Esplora i moduli e le sezioni di studio direttamente in questa pagina.
             </p>
 
             <div class="relative max-w-xl mx-auto">
@@ -107,10 +110,10 @@
                         <i data-lucide="cog" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Meccanica & Macchine</h3>
-                    <p class="text-slate-400 text-sm mb-4">Statica, idrostatica e principi fondamentali della fluidodinamica.</p>
+                    <p class="text-slate-400 text-sm mb-4">Statica, idrostatica e fluidodinamica.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="statica.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-blue-600 hover:text-white transition">Statica</a>
-                        <a href="idrostatica.html" class="text-xs bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 px-2.5 py-1 rounded-md hover:bg-cyan-600 hover:text-white transition">Idrostatica</a>
+                        <a href="#idrostatica" class="text-xs bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 px-2.5 py-1 rounded-md hover:bg-cyan-600 hover:text-white transition">Idrostatica ↓</a>
                     </div>
                 </div>
 
@@ -120,7 +123,7 @@
                         <i data-lucide="flask-conical" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Chimica</h3>
-                    <p class="text-slate-400 text-sm mb-4">Struttura atomica, legami chimici e stechiometria.</p>
+                    <p class="text-slate-400 text-sm mb-4">Atomo, chimica organica e analitica.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="atomo.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-purple-600 hover:text-white transition">Atomo</a>
                     </div>
@@ -132,12 +135,82 @@
                         <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Elettrotecnica</h3>
-                    <p class="text-slate-400 text-sm mb-4">Circuiti elettrici, leggi di Ohm e principi base.</p>
+                    <p class="text-slate-400 text-sm mb-4">Circuiti ed elettromagnetismo.</p>
                     <div class="flex flex-wrap gap-2">
                         <a href="circuiti.html" class="text-xs bg-slate-700/70 text-slate-300 px-2.5 py-1 rounded-md hover:bg-yellow-600 hover:text-white transition">Circuiti</a>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- MODULO COMPLETO: IDROSTATICA -->
+            <div id="idrostatica" class="pt-8 border-t border-slate-800">
+                <div class="bg-slate-800/50 border border-slate-700/80 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-cyan-500/20 rounded-xl text-cyan-400">
+                            <i data-lucide="waves" class="w-8 h-8"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Modulo Didattico</span>
+                            <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Idrostatica</h2>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-3xl">
+                        Studio dei fluidi in condizione di riposo, delle pressioni agenti e dei principi fondamentali (Stevino, Pascal, Archimede).
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Block 1 -->
+                        <div class="bg-slate-900/90 border border-slate-700/70 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-cyan-400 mb-2 flex items-center gap-2">
+                                <i data-lucide="gauge" class="w-5 h-5"></i> 1. Pressione
+                            </h3>
+                            <p class="text-xs text-slate-300 mb-3">Rapporto tra la forza ortogonale esercitata su una superficie e l'area della superficie stessa:</p>
+                            <div class="bg-slate-800 p-3 rounded-lg text-center font-mono text-cyan-300 text-sm font-bold mb-2">
+                                $$p = \frac{F}{S}$$
+                            </div>
+                            <p class="text-[11px] text-slate-400">Unità SI: Pascal ($\text{Pa} = \text{N/m}^2$). $1\text{ bar} = 10^5\text{ Pa}$.</p>
+                        </div>
+
+                        <!-- Block 2 -->
+                        <div class="bg-slate-900/90 border border-slate-700/70 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-blue-400 mb-2 flex items-center gap-2">
+                                <i data-lucide="layers" class="w-5 h-5"></i> 2. Legge di Stevino
+                            </h3>
+                            <p class="text-xs text-slate-300 mb-3">La pressione ad una profondità $h$ dipende dalla densità del fluido $\rho$ e dalla gravità $g$:</p>
+                            <div class="bg-slate-800 p-3 rounded-lg text-center font-mono text-blue-300 text-sm font-bold mb-2">
+                                $$p = p_0 + \rho \cdot g \cdot h$$
+                            </div>
+                            <p class="text-[11px] text-slate-400">$p_0$: Pressione atmosferica ($\approx 101.3\text{ kPa}$).</p>
+                        </div>
+
+                        <!-- Block 3 -->
+                        <div class="bg-slate-900/90 border border-slate-700/70 rounded-2xl p-5">
+                            <h3 class="text-lg font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                                <i data-lucide="git-merge" class="w-5 h-5"></i> 3. Principio di Pascal
+                            </h3>
+                            <p class="text-xs text-slate-300 mb-3">La pressione applicata a un fluido incompresibile si trasmette inalterata in tutto il volume (Torchio Idraulico):</p>
+                            <div class="bg-slate-800 p-3 rounded-lg text-center font-mono text-emerald-300 text-sm font-bold mb-2">
+                                $$F_2 = F_1 \cdot \frac{S_2}{S_1}$$
+                            </div>
+                            <p class="text-[11px] text-slate-400">Consente di moltiplicare la forza applicata.</p>
+                        </div>
+
+                        <!-- Block 4 -->
+                        <div class="bg-slate-900/90 border border-slate-700/70 rounded-2xl p-5 md:col-span-2 lg:col-span-3">
+                            <h3 class="text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
+                                <i data-lucide="anchor" class="w-5 h-5"></i> 4. Spinta di Archimede
+                            </h3>
+                            <p class="text-xs text-slate-300 mb-3">Un corpo immerso in un fluido riceve una spinta verso l'alto pari al peso del fluido spostato:</p>
+                            <div class="bg-slate-800 p-3 rounded-lg text-center font-mono text-amber-300 text-sm font-bold mb-2">
+                                $$S_A = \rho_{\text{fluido}} \cdot V_{\text{immerso}} \cdot g$$
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -149,7 +222,7 @@
                         <i data-lucide="book-open" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Italiano e Letteratura</h3>
-                    <p class="text-slate-400 text-sm mb-4">Dante, la Commedia e gli autori del Novecento.</p>
+                    <p class="text-slate-400 text-sm mb-4">Dante e gli autori del Novecento.</p>
                 </div>
             </div>
         </section>
@@ -212,7 +285,7 @@
                 logoContainer.innerHTML = '<i data-lucide="cpu" class="w-5 h-5 text-white"></i>';
 
                 heroTitle.innerHTML = 'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>';
-                heroSubtitle.textContent = "Seleziona una materia o cerca tra gli argomenti disponibili.";
+                heroSubtitle.textContent = "Esplora i moduli e le sezioni di studio direttamente in questa pagina.";
             } else {
                 navTecnicaDesktop.classList.add('hidden');
                 navTecnicaDesktop.classList.remove('flex');
