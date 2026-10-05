@@ -52,64 +52,64 @@
                     
                     <!-- Dropdown Meccanica -->
                     <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-red-400 flex items-center gap-1">
+                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-red-400 flex items-center gap-1 py-4">
                             <span>Meccanica</span>
                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
 
-                        <!-- Menu 1° livello Meccanica -->
-                        <div class="absolute left-0 mt-1 w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="meccanica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Meccanica</a>
+                        <!-- Menu 1° livello Meccanica (Con ponte prima del menu per evitare chiusure) -->
+                        <div class="absolute left-0 top-full w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+                            <a href="meccanica.html" class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">Meccanica</a>
                             
-                            <!-- Sotto-menu Macchine con idrostatica nidificata -->
+                            <!-- Sotto-menu Macchine con idrostatica nidificata (stesso colore Red/Orange) -->
                             <div class="relative group/sub">
-                                <a href="macchine.html" class="px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white flex items-center justify-between">
+                                <a href="macchine.html" class="px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 flex items-center justify-between font-medium">
                                     <span>Macchine</span>
                                     <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
                                 </a>
-                                <!-- Sotto-menu 2° livello Idrostatica -->
-                                <div class="absolute left-full top-0 ml-1 w-44 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover/sub:block">
-                                    <a href="idrostatica.html" class="block px-4 py-2 text-sm text-rose-400 hover:bg-slate-700 hover:text-rose-300 font-medium">Idrostatica</a>
+                                <!-- Sotto-menu 2° livello Idrostatica (mantiene colore di Macchine/Meccanica) -->
+                                <div class="absolute left-full top-0 w-44 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover/sub:block z-50 before:content-[''] before:absolute before:-left-3 before:top-0 before:w-3 before:h-full">
+                                    <a href="idrostatica.html" class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">↳ Idrostatica</a>
                                 </div>
                             </div>
 
-                            <a href="tecnologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Tecnologia</a>
-                            <a href="disegno.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Disegno</a>
+                            <a href="tecnologia.html" class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">Tecnologia</a>
+                            <a href="disegno.html" class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">Disegno</a>
                         </div>
                     </div>
 
                     <!-- Dropdown Chimica -->
                     <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-purple-400 flex items-center gap-1">
+                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-purple-400 flex items-center gap-1 py-4">
                             <span>Chimica</span>
                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="chimica-analitica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Analitica</a>
-                            <a href="chimica-organica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Organica</a>
+                        <div class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+                            <a href="chimica-analitica.html" class="block px-4 py-2 text-sm text-purple-400 hover:bg-slate-700 hover:text-purple-300 font-medium">Analitica</a>
+                            <a href="chimica-organica.html" class="block px-4 py-2 text-sm text-purple-400 hover:bg-slate-700 hover:text-purple-300 font-medium">Organica</a>
                         </div>
                     </div>
 
                     <!-- Dropdown Igiene -->
                     <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-emerald-400 flex items-center gap-1">
+                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-emerald-400 flex items-center gap-1 py-4">
                             <span>Igiene</span>
                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="epidemiologia.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Epidemiologia</a>
+                        <div class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+                            <a href="epidemiologia.html" class="block px-4 py-2 text-sm text-emerald-400 hover:bg-slate-700 hover:text-emerald-300 font-medium">Epidemiologia</a>
                         </div>
                     </div>
 
                     <!-- Dropdown Sistemi -->
                     <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-amber-400 flex items-center gap-1">
+                        <button class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-amber-400 flex items-center gap-1 py-4">
                             <span>Sistemi</span>
                             <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
-                        <div class="absolute left-0 mt-1 w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                            <a href="elettronica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Elettronica</a>
-                            <a href="elettrotecnica.html" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white">Elettrotecnica</a>
+                        <div class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+                            <a href="elettronica.html" class="block px-4 py-2 text-sm text-amber-400 hover:bg-slate-700 hover:text-amber-300 font-medium">Elettronica</a>
+                            <a href="elettrotecnica.html" class="block px-4 py-2 text-sm text-amber-400 hover:bg-slate-700 hover:text-amber-300 font-medium">Elettrotecnica</a>
                         </div>
                     </div>
 
@@ -133,22 +133,22 @@
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2">
             <div id="navTecnicaMobile" class="space-y-1">
                 <span class="block px-3 py-1 text-xs font-bold uppercase text-red-400">Meccanica</span>
-                <a href="meccanica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Meccanica</a>
-                <a href="macchine.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Macchine</a>
-                <a href="idrostatica.html" onclick="toggleMobileMenu()" class="block pl-6 py-1 text-xs text-rose-400 hover:bg-slate-800 rounded-lg">↳ Idrostatica</a>
-                <a href="tecnologia.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Tecnologia</a>
-                <a href="disegno.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Disegno</a>
+                <a href="meccanica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">Meccanica</a>
+                <a href="macchine.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">Macchine</a>
+                <a href="idrostatica.html" onclick="toggleMobileMenu()" class="block pl-6 py-1 text-xs text-red-400 hover:bg-slate-800 rounded-lg font-medium">↳ Idrostatica</a>
+                <a href="tecnologia.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">Tecnologia</a>
+                <a href="disegno.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">Disegno</a>
 
                 <span class="block px-3 py-1 text-xs font-bold uppercase text-purple-400 mt-2">Chimica</span>
-                <a href="chimica-analitica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Analitica</a>
-                <a href="chimica-organica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Organica</a>
+                <a href="chimica-analitica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-purple-400 hover:bg-slate-800 rounded-lg">Analitica</a>
+                <a href="chimica-organica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-purple-400 hover:bg-slate-800 rounded-lg">Organica</a>
 
                 <span class="block px-3 py-1 text-xs font-bold uppercase text-emerald-400 mt-2">Igiene</span>
-                <a href="epidemiologia.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Epidemiologia</a>
+                <a href="epidemiologia.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-emerald-400 hover:bg-slate-800 rounded-lg">Epidemiologia</a>
 
                 <span class="block px-3 py-1 text-xs font-bold uppercase text-amber-400 mt-2">Sistemi</span>
-                <a href="elettronica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Elettronica</a>
-                <a href="elettrotecnica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-slate-300 hover:bg-slate-800 rounded-lg">Elettrotecnica</a>
+                <a href="elettronica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-amber-400 hover:bg-slate-800 rounded-lg">Elettronica</a>
+                <a href="elettrotecnica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-amber-400 hover:bg-slate-800 rounded-lg">Elettrotecnica</a>
 
                 <span class="block px-3 py-1 text-xs font-bold uppercase text-slate-500 mt-2">Altre Materie</span>
                 <a href="matematica.html" onclick="toggleMobileMenu()" class="block px-3 py-1 text-sm text-indigo-400 hover:bg-slate-800 rounded-lg">Matematica</a>
@@ -190,7 +190,7 @@
         <section id="sectionTecnica" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 
-                <!-- Group 1: Meccanica (Rosso) -->
+                <!-- Group 1: Meccanica (Rosso uniforme per tutti i sottogruppi) -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-red-500/50 transition shadow-lg">
                     <div class="p-3 bg-red-500/10 rounded-xl w-fit text-red-400 mb-4">
                         <i data-lucide="cog" class="w-6 h-6"></i>
@@ -200,12 +200,13 @@
                     <div class="flex flex-wrap gap-2">
                         <a href="meccanica.html" class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Meccanica</a>
                         <a href="macchine.html" class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Macchine</a>
+                        <a href="idrostatica.html" class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Idrostatica</a>
                         <a href="tecnologia.html" class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Tecnologia</a>
                         <a href="disegno.html" class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">Disegno</a>
                     </div>
                 </div>
 
-                <!-- Group 2: Chimica (Viola) -->
+                <!-- Group 2: Chimica (Viola uniforme) -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-purple-500/50 transition shadow-lg">
                     <div class="p-3 bg-purple-500/10 rounded-xl w-fit text-purple-400 mb-4">
                         <i data-lucide="flask-conical" class="w-6 h-6"></i>
@@ -218,7 +219,7 @@
                     </div>
                 </div>
 
-                <!-- Group 3: Igiene (Smeraldo) -->
+                <!-- Group 3: Igiene (Smeraldo uniforme) -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition shadow-lg">
                     <div class="p-3 bg-emerald-500/10 rounded-xl w-fit text-emerald-400 mb-4">
                         <i data-lucide="activity" class="w-6 h-6"></i>
@@ -230,7 +231,7 @@
                     </div>
                 </div>
 
-                <!-- Group 4: Sistemi (Giallo/Ambra) -->
+                <!-- Group 4: Sistemi (Ambra uniforme) -->
                 <div class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-amber-500/50 transition shadow-lg">
                     <div class="p-3 bg-amber-500/10 rounded-xl w-fit text-amber-400 mb-4">
                         <i data-lucide="cpu" class="w-6 h-6"></i>
