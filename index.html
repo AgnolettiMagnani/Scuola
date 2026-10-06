@@ -132,12 +132,28 @@
 
 
                                 <div
-                                    class="absolute left-full top-0 w-44 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover/sub:block z-50 before:content-[''] before:absolute before:-left-3 before:top-0 before:w-3 before:h-full">
+                                    class="absolute left-full top-0 w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover/sub:block z-50 before:content-[''] before:absolute before:-left-3 before:top-0 before:w-3 before:h-full">
+
+                                    <div class="px-4 py-2 text-xs font-bold uppercase text-blue-400">
+                                        Idraulica
+                                    </div>
 
                                     <a
                                         href="idrostatica.html"
-                                        class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">
-                                        ↳ Idrostatica
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Idrostatica
+                                    </a>
+
+                                    <a
+                                        href="idrodinamica.html"
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Idrodinamica
+                                    </a>
+
+                                    <a
+                                        href="perdite-di-carico.html"
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Perdite di carico
                                     </a>
 
                                 </div>
@@ -352,12 +368,32 @@
                     Macchine
                 </a>
 
-                <a
-                    href="idrostatica.html"
-                    onclick="toggleMobileMenu()"
-                    class="block pl-6 py-1 text-xs text-red-400 hover:bg-slate-800 rounded-lg font-medium">
-                    ↳ Idrostatica
-                </a>
+                <div class="ml-3 mt-1 mb-2 border-l border-blue-500/30 pl-3">
+                    <span class="block px-3 py-1 text-xs font-bold uppercase text-blue-400">
+                        Idraulica
+                    </span>
+
+                    <a
+                        href="idrostatica.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Idrostatica
+                    </a>
+
+                    <a
+                        href="idrodinamica.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Idrodinamica
+                    </a>
+
+                    <a
+                        href="perdite-di-carico.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Perdite di carico
+                    </a>
+                </div>
 
                 <a
                     href="tecnologia.html"
