@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portale Scolastico - Tecnica & Umanistica</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased overflow-x-hidden">
+
+    <!-- ========================================================= -->
+    <!-- HEADER & NAVIGATION -->
+    <!-- ========================================================= -->
+    <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex items-center justify-between h-16 gap-2">
+
+                <!-- LOGO & SWITCH INDIRIZZO -->
+                <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+
+                    <a href="index.html" class="flex items-center gap-2">
+
+                        <div id="logoBg"
+                             class="p-2 bg-blue-600 rounded-lg transition-colors flex items-center justify-center">
+
+                            <span id="logoIconContainer" class="flex items-center justify-center">
+                                <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+                            </span>
+
+                        </div>
+
+                        <span class="font-bold text-base sm:text-lg tracking-tight text-white">
+                            Scuola
+                            <span id="logoText" class="text-blue-500">
+                                Tecnica
+                            </span>
+                        </span>
+
+                    </a>
+
+
+                    <!-- SWITCHER TECNICA / UMANISTICA -->
+                    <div class="bg-slate-800 p-1 rounded-xl border border-slate-700 flex items-center gap-1">
+
+                        <button
+                            type="button"
+                            id="btnTecnica"
+                            onclick="switchAddress('tecnica')"
+                            class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center">
+
+                            <i data-lucide="cpu" class="w-3.5 h-3.5 mr-1"></i>
+                            <span>Tecnica</span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="btnUmanistica"
+                            onclick="switchAddress('umanistica')"
+                            class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center">
+
+                            <i data-lucide="feather" class="w-3.5 h-3.5 mr-1"></i>
+                            <span>Umanistica</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HAMBURGER MOBILE -->
+                <button
+                    type="button"
+                    onclick="toggleMobileMenu()"
+                    class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+
+                </button>
+
+
+                <!-- ================================================= -->
+                <!-- NAV DESKTOP AREA TECNICA -->
+                <!-- ================================================= -->
+
+                <nav id="navTecnicaDesktop" class="flex items-center gap-1">
+
+                    <!-- MECCANICA -->
+                    <div class="relative group">
+
+                        <button
+                            class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-red-400 flex items-center gap-1 py-4">
+
+                            <span>Meccanica</span>
+
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+
+                        </button>
+
+
+                        <div
+                            class="absolute left-0 top-full w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+
+                            <a
+                                href="meccanica.html"
+                                class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">
+                                Meccanica
+                            </a>
+
+
+                            <div class="relative group/sub">
+
+                                <a
+                                    href="macchine.html"
+                                    class="px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 flex items-center justify-between font-medium">
+
+                                    <span>Macchine</span>
+
+                                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+
+                                </a>
+
+
+                                <div
+                                    class="absolute left-full top-0 w-52 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover/sub:block z-50 before:content-[''] before:absolute before:-left-3 before:top-0 before:w-3 before:h-full">
+
+                                    <div class="px-4 py-2 text-xs font-bold uppercase text-blue-400">
+                                        Idraulica
+                                    </div>
+
+                                    <a
+                                        href="idrostatica.html"
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Idrostatica
+                                    </a>
+
+                                    <a
+                                        href="idrodinamica.html"
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Idrodinamica
+                                    </a>
+
+                                    <a
+                                        href="perdite-di-carico.html"
+                                        class="block px-4 py-2 text-sm text-blue-300 hover:bg-slate-700 hover:text-blue-200 font-medium">
+                                        Perdite di carico
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="tecnologia.html"
+                                class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">
+                                Tecnologia
+                            </a>
+
+
+                            <a
+                                href="disegno.html"
+                                class="block px-4 py-2 text-sm text-red-400 hover:bg-slate-700 hover:text-red-300 font-medium">
+                                Disegno
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CHIMICA -->
+                    <div class="relative group">
+
+                        <button
+                            class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-purple-400 flex items-center gap-1 py-4">
+
+                            <span>Chimica</span>
+
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+
+                        </button>
+
+
+                        <div
+                            class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+
+                            <a
+                                href="chimica-analitica.html"
+                                class="block px-4 py-2 text-sm text-purple-400 hover:bg-slate-700 hover:text-purple-300 font-medium">
+                                Analitica
+                            </a>
+
+                            <a
+                                href="chimica-organica.html"
+                                class="block px-4 py-2 text-sm text-purple-400 hover:bg-slate-700 hover:text-purple-300 font-medium">
+                                Organica
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IGIENE -->
+                    <div class="relative group">
+
+                        <button
+                            class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-emerald-400 flex items-center gap-1 py-4">
+
+                            <span>Igiene</span>
+
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+
+                        </button>
+
+
+                        <div
+                            class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+
+                            <a
+                                href="epidemiologia.html"
+                                class="block px-4 py-2 text-sm text-emerald-400 hover:bg-slate-700 hover:text-emerald-300 font-medium">
+                                Epidemiologia
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SISTEMI -->
+                    <div class="relative group">
+
+                        <button
+                            class="px-3 py-2 text-sm font-medium text-slate-300 group-hover:text-amber-400 flex items-center gap-1 py-4">
+
+                            <span>Sistemi</span>
+
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+
+                        </button>
+
+
+                        <div
+                            class="absolute left-0 top-full w-48 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 hidden group-hover:block z-50 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3">
+
+                            <a
+                                href="elettronica.html"
+                                class="block px-4 py-2 text-sm text-amber-400 hover:bg-slate-700 hover:text-amber-300 font-medium">
+                                Elettronica
+                            </a>
+
+                            <a
+                                href="elettrotecnica.html"
+                                class="block px-4 py-2 text-sm text-amber-400 hover:bg-slate-700 hover:text-amber-300 font-medium">
+                                Elettrotecnica
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LINK DIRETTI -->
+
+                    <a
+                        href="matematica.html"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-indigo-400">
+                        Matematica
+                    </a>
+
+                    <a
+                        href="fisica.html"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400">
+                        Fisica
+                    </a>
+
+                    <a
+                        href="informatica.html"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-blue-400">
+                        Informatica
+                    </a>
+
+                </nav>
+
+
+                <!-- ================================================= -->
+                <!-- NAV DESKTOP AREA UMANISTICA -->
+                <!-- ================================================= -->
+
+                <nav id="navUmanisticaDesktop" class="hidden items-center gap-1">
+
+                    <!-- ITALIANO - ROSA -->
+                    <a
+                        href="#italiano"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-pink-400 transition">
+
+                        Italiano
+
+                    </a>
+
+
+                    <!-- STORIA - ARANCIONE -->
+                    <a
+                        href="#storia"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-orange-400 transition">
+
+                        Storia
+
+                    </a>
+
+
+                    <!-- INGLESE - VIOLA -->
+                    <a
+                        href="#inglese"
+                        class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-violet-400 transition">
+
+                        Inglese
+
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================================= -->
+        <!-- MENU MOBILE -->
+        <!-- ========================================================= -->
+
+        <div
+            id="mobileMenu"
+            class="hidden md:hidden border-t border-slate-800 bg-slate-900 px-4 py-3 space-y-2">
+
+
+            <!-- MENU TECNICA MOBILE -->
+
+            <div id="navTecnicaMobile" class="space-y-1">
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-red-400">
+                    Meccanica
+                </span>
+
+                <a
+                    href="meccanica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">
+                    Meccanica
+                </a>
+
+                <a
+                    href="macchine.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">
+                    Macchine
+                </a>
+
+                <div class="ml-3 mt-1 mb-2 border-l border-blue-500/30 pl-3">
+                    <span class="block px-3 py-1 text-xs font-bold uppercase text-blue-400">
+                        Idraulica
+                    </span>
+
+                    <a
+                        href="idrostatica.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Idrostatica
+                    </a>
+
+                    <a
+                        href="idrodinamica.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Idrodinamica
+                    </a>
+
+                    <a
+                        href="perdite-di-carico.html"
+                        onclick="toggleMobileMenu()"
+                        class="block px-3 py-1 text-sm text-blue-300 hover:bg-slate-800 rounded-lg">
+                        Perdite di carico
+                    </a>
+                </div>
+
+                <a
+                    href="tecnologia.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">
+                    Tecnologia
+                </a>
+
+                <a
+                    href="disegno.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-red-400 hover:bg-slate-800 rounded-lg">
+                    Disegno
+                </a>
+
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-purple-400 mt-2">
+                    Chimica
+                </span>
+
+                <a
+                    href="chimica-analitica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-purple-400 hover:bg-slate-800 rounded-lg">
+                    Analitica
+                </a>
+
+                <a
+                    href="chimica-organica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-purple-400 hover:bg-slate-800 rounded-lg">
+                    Organica
+                </a>
+
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-emerald-400 mt-2">
+                    Igiene
+                </span>
+
+                <a
+                    href="epidemiologia.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-emerald-400 hover:bg-slate-800 rounded-lg">
+                    Epidemiologia
+                </a>
+
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-amber-400 mt-2">
+                    Sistemi
+                </span>
+
+                <a
+                    href="elettronica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-amber-400 hover:bg-slate-800 rounded-lg">
+                    Elettronica
+                </a>
+
+                <a
+                    href="elettrotecnica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-amber-400 hover:bg-slate-800 rounded-lg">
+                    Elettrotecnica
+                </a>
+
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-slate-500 mt-2">
+                    Altre Materie
+                </span>
+
+                <a
+                    href="matematica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-indigo-400 hover:bg-slate-800 rounded-lg">
+                    Matematica
+                </a>
+
+                <a
+                    href="fisica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-cyan-400 hover:bg-slate-800 rounded-lg">
+                    Fisica
+                </a>
+
+                <a
+                    href="informatica.html"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1 text-sm text-blue-400 hover:bg-slate-800 rounded-lg">
+                    Informatica
+                </a>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- MENU UMANISTICA MOBILE -->
+            <!-- ================================================= -->
+
+            <div id="navUmanisticaMobile" class="hidden space-y-1">
+
+                <span class="block px-3 py-1 text-xs font-bold uppercase text-slate-500">
+                    Area Umanistica
+                </span>
+
+
+                <!-- ITALIANO - ROSA -->
+
+                <a
+                    href="#italiano"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1.5 text-sm text-pink-400 hover:bg-slate-800 hover:text-pink-300 rounded-lg transition">
+
+                    Italiano & Letteratura
+
+                </a>
+
+
+                <!-- STORIA - ARANCIONE -->
+
+                <a
+                    href="#storia"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1.5 text-sm text-orange-400 hover:bg-slate-800 hover:text-orange-300 rounded-lg transition">
+
+                    Storia
+
+                </a>
+
+
+                <!-- INGLESE - VIOLA -->
+
+                <a
+                    href="#inglese"
+                    onclick="toggleMobileMenu()"
+                    class="block px-3 py-1.5 text-sm text-violet-400 hover:bg-slate-800 hover:text-violet-300 rounded-lg transition">
+
+                    Inglese
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- MAIN -->
+    <!-- ========================================================= -->
+
+    <main class="flex-grow">
+
+
+        <!-- HERO -->
+
+        <section
+            class="py-8 sm:py-12 px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
+
+            <h1
+                id="heroTitle"
+                class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+
+                Appunti e Risorse per l'
+
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                    Area Tecnica
+                </span>
+
+            </h1>
+
+
+            <p
+                id="heroSubtitle"
+                class="text-slate-400 text-sm sm:text-lg mb-6">
+
+                Seleziona un modulo o cerca tra tutti gli argomenti didattici disponibili.
+
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="relative max-w-xl mx-auto">
+
+                <div
+                    class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+
+                    <i
+                        data-lucide="search"
+                        class="w-5 h-5 text-slate-400">
+                    </i>
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    onkeyup="filterTopics()"
+                    placeholder="Cerca un argomento..."
+
+                    class="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-xl text-white text-sm sm:text-base placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition shadow-lg">
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================= -->
+        <!-- AREA TECNICA -->
+        <!-- ========================================================= -->
+
+        <section
+            id="sectionTecnica"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+
+              <!-- MECCANICA -->
+
+<div
+    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-red-500/50 transition shadow-lg">
+
+    <div
+        class="p-3 bg-red-500/10 rounded-xl w-fit text-red-400 mb-4">
+
+        <i data-lucide="cog" class="w-6 h-6"></i>
+
+    </div>
+
+    <h3 class="text-xl font-bold text-white mb-2">
+        Meccanica
+    </h3>
+
+    <p class="text-slate-400 text-sm mb-4">
+        Meccanica, macchine, tecnologia e disegno.
+    </p>
+
+    <div class="flex flex-wrap gap-2">
+
+        <a
+            href="meccanica.html"
+            class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">
+            Meccanica
+        </a>
+
+        <a
+            href="macchine.html"
+            class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">
+            Macchine
+        </a>
+
+        <a
+            href="tecnologia.html"
+            class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">
+            Tecnologia
+        </a>
+
+        <a
+            href="disegno.html"
+            class="text-xs bg-red-500/10 border border-red-500/30 text-red-300 px-2.5 py-1 rounded-md hover:bg-red-600 hover:text-white transition">
+            Disegno
+        </a>
+
+    </div>
+
+</div>
+
+                <!-- CHIMICA -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-purple-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-purple-500/10 rounded-xl w-fit text-purple-400 mb-4">
+
+                        <i data-lucide="flask-conical" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Chimica
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Chimica analitica e chimica organica.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="chimica-analitica.html"
+                           class="text-xs bg-purple-500/10 border border-purple-500/30 text-purple-300 px-2.5 py-1 rounded-md hover:bg-purple-600 hover:text-white transition">
+                            Analitica
+                        </a>
+
+                        <a href="chimica-organica.html"
+                           class="text-xs bg-purple-500/10 border border-purple-500/30 text-purple-300 px-2.5 py-1 rounded-md hover:bg-purple-600 hover:text-white transition">
+                            Organica
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IGIENE -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-emerald-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-emerald-500/10 rounded-xl w-fit text-emerald-400 mb-4">
+
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Igiene
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Igiene generale, profilassi ed epidemiologia.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="epidemiologia.html"
+                           class="text-xs bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-2.5 py-1 rounded-md hover:bg-emerald-600 hover:text-white transition">
+                            Epidemiologia
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SISTEMI -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-amber-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-amber-500/10 rounded-xl w-fit text-amber-400 mb-4">
+
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Sistemi
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Elettronica analogica/digitale ed elettrotecnica.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="elettronica.html"
+                           class="text-xs bg-amber-500/10 border border-amber-500/30 text-amber-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">
+                            Elettronica
+                        </a>
+
+                        <a href="elettrotecnica.html"
+                           class="text-xs bg-amber-500/10 border border-amber-500/30 text-amber-300 px-2.5 py-1 rounded-md hover:bg-amber-600 hover:text-white transition">
+                            Elettrotecnica
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MATEMATICA -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-indigo-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-indigo-500/10 rounded-xl w-fit text-indigo-400 mb-4">
+
+                        <i data-lucide="binary" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Matematica
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Analisi matematica, algebra ed equazioni.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="matematica.html"
+                           class="text-xs bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 px-2.5 py-1 rounded-md hover:bg-indigo-600 hover:text-white transition">
+                            Matematica
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FISICA -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-cyan-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-cyan-500/10 rounded-xl w-fit text-cyan-400 mb-4">
+
+                        <i data-lucide="atom" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Fisica
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Cinematica, dinamica e termodinamica.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="fisica.html"
+                           class="text-xs bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 px-2.5 py-1 rounded-md hover:bg-cyan-600 hover:text-white transition">
+                            Fisica
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATICA -->
+
+                <div
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-blue-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-blue-500/10 rounded-xl w-fit text-blue-400 mb-4">
+
+                        <i data-lucide="terminal" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Informatica
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Programmazione, algoritmi e strutture dati.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2">
+
+                        <a href="informatica.html"
+                           class="text-xs bg-blue-500/10 border border-blue-500/30 text-blue-300 px-2.5 py-1 rounded-md hover:bg-blue-600 hover:text-white transition">
+                            Informatica
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================= -->
+        <!-- AREA UMANISTICA -->
+        <!-- ========================================================= -->
+
+        <section
+            id="sectionUmanistica"
+            class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+
+                <!-- ================================================= -->
+                <!-- ITALIANO - ROSA -->
+                <!-- ================================================= -->
+
+                <div
+                    id="italiano"
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-pink-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-pink-500/10 rounded-xl w-fit text-pink-400 mb-4">
+
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Italiano e Letteratura
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Dante, la Divina Commedia e gli autori del Novecento.
+                    </p>
+
+                </div>
+
+
+                <!-- ================================================= -->
+                <!-- STORIA - ARANCIONE -->
+                <!-- ================================================= -->
+
+                <div
+                    id="storia"
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-orange-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-orange-500/10 rounded-xl w-fit text-orange-400 mb-4">
+
+                        <i data-lucide="landmark" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Storia
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Dalle rivoluzioni industriali al Novecento.
+                    </p>
+
+                </div>
+
+
+                <!-- ================================================= -->
+                <!-- INGLESE - VIOLA -->
+                <!-- ================================================= -->
+
+                <div
+                    id="inglese"
+                    class="subject-card bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 hover:border-violet-500/50 transition shadow-lg">
+
+                    <div
+                        class="p-3 bg-violet-500/10 rounded-xl w-fit text-violet-400 mb-4">
+
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-2">
+                        Inglese Tecnico
+                    </h3>
+
+                    <p class="text-slate-400 text-sm mb-4">
+                        Grammatica e vocabolario per l'ingegneria.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer
+        class="bg-slate-950 border-t border-slate-800 py-6 mt-12">
+
+        <div
+            class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+
+            <p>
+                © Portale Scolastico — Materiale didattico per studenti.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================================= -->
+
+    <script>
+
+        /* =========================================================
+           INIZIALIZZAZIONE ICONE
+        ========================================================= */
+
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+
+        /* =========================================================
+           MENU MOBILE
+        ========================================================= */
+
+        function toggleMobileMenu() {
+
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenu.classList.toggle('hidden');
+
+        }
+
+
+        /* =========================================================
+           SWITCH TECNICA / UMANISTICA
+        ========================================================= */
+
+        function switchAddress(mode) {
+
+            const navTecnicaDesktop =
+                document.getElementById('navTecnicaDesktop');
+
+            const navUmanisticaDesktop =
+                document.getElementById('navUmanisticaDesktop');
+
+            const navTecnicaMobile =
+                document.getElementById('navTecnicaMobile');
+
+            const navUmanisticaMobile =
+                document.getElementById('navUmanisticaMobile');
+
+            const secTecnica =
+                document.getElementById('sectionTecnica');
+
+            const secUmanistica =
+                document.getElementById('sectionUmanistica');
+
+            const btnTecnica =
+                document.getElementById('btnTecnica');
+
+            const btnUmanistica =
+                document.getElementById('btnUmanistica');
+
+            const logoBg =
+                document.getElementById('logoBg');
+
+            const logoText =
+                document.getElementById('logoText');
+
+            const logoContainer =
+                document.getElementById('logoIconContainer');
+
+            const heroTitle =
+                document.getElementById('heroTitle');
+
+            const heroSubtitle =
+                document.getElementById('heroSubtitle');
+
+
+            /* =====================================================
+               AREA TECNICA
+            ===================================================== */
+
+            if (mode === 'tecnica') {
+
+                /* NAV DESKTOP */
+
+                navTecnicaDesktop.classList.remove('hidden');
+                navTecnicaDesktop.classList.add('flex');
+
+                navUmanisticaDesktop.classList.add('hidden');
+                navUmanisticaDesktop.classList.remove('flex');
+
+
+                /* NAV MOBILE */
+
+                navTecnicaMobile.classList.remove('hidden');
+                navUmanisticaMobile.classList.add('hidden');
+
+
+                /* SEZIONI */
+
+                secTecnica.classList.remove('hidden');
+                secUmanistica.classList.add('hidden');
+
+
+                /* PULSANTI */
+
+                btnTecnica.className =
+                    "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white shadow cursor-pointer flex items-center";
+
+                btnUmanistica.className =
+                    "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center";
+
+
+                /* LOGO */
+
+                logoBg.className =
+                    "p-2 bg-blue-600 rounded-lg transition-colors flex items-center justify-center";
+
+                logoText.textContent = "Tecnica";
+
+                logoText.className = "text-blue-500";
+
+                logoContainer.innerHTML =
+                    '<i data-lucide="cpu" class="w-5 h-5 text-white"></i>';
+
+
+                /* HERO */
+
+                heroTitle.innerHTML =
+                    'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Area Tecnica</span>';
+
+                heroSubtitle.textContent =
+                    "Seleziona un modulo o cerca tra tutti gli argomenti didattici disponibili.";
+
+            }
+
+
+            /* =====================================================
+               AREA UMANISTICA
+            ===================================================== */
+
+            else {
+
+                /* NAV DESKTOP */
+
+                navTecnicaDesktop.classList.add('hidden');
+                navTecnicaDesktop.classList.remove('flex');
+
+                navUmanisticaDesktop.classList.remove('hidden');
+                navUmanisticaDesktop.classList.add('flex');
+
+
+                /* NAV MOBILE */
+
+                navTecnicaMobile.classList.add('hidden');
+                navUmanisticaMobile.classList.remove('hidden');
+
+
+                /* SEZIONI */
+
+                secTecnica.classList.add('hidden');
+                secUmanistica.classList.remove('hidden');
+
+
+                /* PULSANTI */
+
+                btnUmanistica.className =
+                    "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow cursor-pointer flex items-center";
+
+                btnTecnica.className =
+                    "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white cursor-pointer flex items-center";
+
+
+                /* LOGO */
+
+                logoBg.className =
+                    "p-2 bg-amber-600 rounded-lg transition-colors flex items-center justify-center";
+
+                logoText.textContent = "Umanistica";
+
+                logoText.className = "text-amber-500";
+
+                logoContainer.innerHTML =
+                    '<i data-lucide="feather" class="w-5 h-5 text-white"></i>';
+
+
+                /* HERO */
+
+                heroTitle.innerHTML =
+                    'Appunti e Risorse per l\'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">Area Umanistica</span>';
+
+                heroSubtitle.textContent =
+                    "Esplora i moduli dell'Area Umanistica.";
+
+            }
+
+
+            /* RICREA LE ICONE */
+
+            lucide.createIcons();
+
+        }
+
+
+        /* =========================================================
+           FILTRO RICERCA
+        ========================================================= */
+
+        function filterTopics() {
+
+            const input =
+                document.getElementById('searchInput').value.toLowerCase();
+
+            const secTecnica =
+                document.getElementById('sectionTecnica');
+
+            const secUmanistica =
+                document.getElementById('sectionUmanistica');
+
+
+            const activeSection =
+                !secTecnica.classList.contains('hidden')
+                    ? secTecnica
+                    : secUmanistica;
+
+
+            const cards =
+                activeSection.querySelectorAll('.subject-card');
+
+
+            cards.forEach(card => {
+
+                const text =
+                    card.textContent.toLowerCase();
+
+                card.style.display =
+                    text.includes(input)
+                        ? "block"
+                        : "none";
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
